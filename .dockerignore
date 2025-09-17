@@ -1,0 +1,29 @@
+# Node dependencies (install inside container)
+node_modules/
+
+# Build outputs (clean container build)
+dist/
+dist-ssr/
+build/
+
+# Cache / temporary files
+.eslintcache
+tmp/
+*.swp
+*.bak
+
+# Environment files
+.env
+
+# Logs
+logs/
+*.log
+
+# Git / VCS
+.git/
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.iml
+.DS_Store

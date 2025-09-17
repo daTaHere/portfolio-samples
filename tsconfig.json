@@ -1,0 +1,4 @@
+// Extend only our TS configs for a new project
+{
+  "extends": "./tsconfig.app.json"
+}
