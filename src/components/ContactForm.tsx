@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button, Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import { useForm, FormProvider } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -10,7 +10,7 @@ const contactUsSchema = z.object({
   firstName: z.string().min(1, 'First name is required'),
   lastName: z.string().min(1, 'Last name is required'),
   email: z.string().email('Invalid email address'),
-  subject: z.string().min(1, 'Subject is required'),
+  subject: z.string(),
   message: z.string().min(1, 'Message is required'),
 });
 
@@ -38,104 +38,38 @@ const ContactForm: React.FC = () => {
         <Grid container spacing={2}>
           {/* First Name */}
           <Grid size={{ xs: 12, sm: 6 }}>
-            <FormTextField name="firstName" label="First Name" required />
-            {/* <TextField
-              fullWidth
+            <FormTextField
+              name="firstName"
               label="First Name"
-              aria-label="First name"
-              {...register('firstName')}
-              error={!!errors.firstName}
-              // helperText={errors.firstName?.message}
-              sx={{ bgcolor: 'white' }}
-              required
-              slotProps={{
-                inputLabel: {
-                  sx: {
-                    '& .MuiFormLabel-asterisk': {
-                      color: 'red',
-                    },
-                  },
-                },
-              }}
-              //        slotProps={{
-              //   inputLabel: {
-              //     sx: {
-              //       '& .MuiFormLabel-asterisk': {
-              //         color: 'red',
-              //       },
-              //     },
-              //   },
-              // }}
-            /> */}
+              isRequired={true}
+            />
           </Grid>
-
           {/* Last Name */}
           <Grid size={{ xs: 12, sm: 6 }}>
-            <FormTextField name="lastName" label="Last Name" required />
-            {/* <TextField
-              fullWidth
+            <FormTextField
+              name="lastName"
               label="Last Name"
-              aria-label="Last name"
-              {...register('lastName')}
-              error={!!errors.lastName}
-              // helperText={errors.lastName?.message}
-              sx={{ bgcolor: 'white' }}
-              required
-            /> */}
+              isRequired={true}
+            />
           </Grid>
-
           {/* Email */}
           <Grid size={12}>
-            <FormTextField name="email" label="Email" required />
-            {/* <TextField
-              fullWidth
-              label="Email"
-              type="email"
-              aria-label="Email address"
-              {...register('email')}
-              error={!!errors.email}
-              // helperText={errors.email?.message}
-              sx={{ bgcolor: 'white' }}
-              required
-            /> */}
+            <FormTextField name="email" label="Email" isRequired={true} />
           </Grid>
 
           {/* Subject */}
           <Grid size={12}>
             <FormTextField name="subject" label="Subject" />
-            {/* <TextField
-              fullWidth
-              label="Subject"
-              aria-label="Message subject"
-              {...register('subject')}
-              error={!!errors.subject}
-              // helperText={errors.subject?.message}
-              sx={{ bgcolor: 'white' }}
-              required
-            /> */}
           </Grid>
-
           {/* Message */}
           <Grid size={12}>
             <FormTextField
               name="message"
               label="Message"
-              required
+              isRequired={true}
               multiline
               rows={4}
             />
-            {/* <TextField
-              fullWidth
-              label="Message"
-              aria-label="Message content"
-              multiline
-              rows={4}
-              {...register('message')}
-              error={!!errors.message}
-              // helperText={errors.message?.message}
-              sx={{ bgcolor: 'white' }}
-              required
-            /> */}
           </Grid>
 
           {/* Submit */}

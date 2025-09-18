@@ -1,14 +1,22 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 function Footer() {
   return (
     <Box
       component="footer"
-      sx={{ py: 2, mt: 'auto', textAlign: 'center', bgcolor: 'grey.200' }}
+      sx={{
+        py: 2,
+        mt: 'auto',
+        textAlign: 'center',
+        bgcolor: 'grey.200',
+        minWidth: '100vw',
+      }}
     >
-      <Typography variant="body2">
-        © {new Date().getFullYear()} My App
-      </Typography>
+      <Container maxWidth="sm">
+        <Typography variant="body2">
+          © {new Date().getFullYear()} My App
+        </Typography>
+      </Container>
     </Box>
   );
 }
