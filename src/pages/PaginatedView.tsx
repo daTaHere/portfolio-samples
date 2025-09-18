@@ -5,6 +5,7 @@ function PaginatedView() {
     <Container
       sx={{
         display: 'flex',
+        flexGrow: 1,
         justifyContent: 'center',
         minHeight: '100vh',
       }}
