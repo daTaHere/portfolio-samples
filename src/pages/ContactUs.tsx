@@ -46,7 +46,7 @@ function ContactUs() {
           sx={{
             p: { xs: 3, md: 5, lg: 12, xl: 22 },
             alignContent: 'center',
-            bgcolor: 'grey.200',
+            bgcolor: 'background.paper',
           }}
         >
           <ContactForm />

@@ -1,4 +1,5 @@
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { ThemeSelector } from '../components/themeSelector';
 import { Link } from 'react-router-dom';
 
 export default function NavBar() {
@@ -20,6 +21,7 @@ export default function NavBar() {
         <Button color="inherit" component={Link} to="/contact">
           Contact Us
         </Button>
+        <ThemeSelector />
       </Toolbar>
     </AppBar>
   );

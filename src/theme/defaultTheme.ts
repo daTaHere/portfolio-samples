@@ -1,22 +1,21 @@
-// import { extendTheme } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
-import { purple, teal } from '@mui/material/colors';
+import { blueGrey } from '@mui/material/colors';
 
 const lightPalette = {
   primary: { main: '#9400ff' },
   secondary: { main: '#19cb98' },
   background: {
-    default: 'hsl(240, 20%, 98%)', // light grayish-blue
-    paper: 'hsl(0, 0%, 100%)', // white
+    default: 'hsl(0, 0%, 100%)', // light grayish-blue
+    paper: 'hsl(240, 20%, 98%)', // white
   },
 };
 
 const darkPalette = {
-  primary: { main: purple['A700'] }, // brighter blue for contrast
-  secondary: {
-    main: teal['A200'],
-    default: 'hsl(240, 12%, 12%)', // near black
-    paper: 'hsl(240, 15%, 18%)', // dark gray
+  primary: { main: '#19cb98' }, // brighter blue for contrast
+  secondary: { main: '#9400ff' },
+  background: {
+    default: blueGrey[700], // near black
+    paper: blueGrey[900], // dark gray
   },
 };
 // export const typography = {

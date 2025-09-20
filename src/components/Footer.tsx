@@ -8,8 +8,8 @@ function Footer() {
         py: 2,
         mt: 'auto',
         textAlign: 'center',
-        bgcolor: 'grey.200',
         minWidth: '100vw',
+        bgcolor: 'background.paper',
       }}
     >
       <Container maxWidth="sm">
