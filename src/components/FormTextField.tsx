@@ -1,6 +1,8 @@
 import React from 'react';
 import { TextField } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
+import type { Palette } from '@mui/icons-material';
+import { theme } from '../theme/defaultTheme';
 
 interface FormTextFieldProps {
   name: string;
@@ -33,16 +35,26 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
               {...field}
               fullWidth
               label={label}
+              color="secondary"
               required
               multiline={multiline}
               rows={rows}
               error={!!errors[name]}
-              helperText={errors[name]?.message as string}
+              // helperText={errors[name]?.message as string}
               sx={{ bgcolor: 'white' }}
               slotProps={{
+                input: {
+                  sx: {
+                    color: theme.palette.text.primary,
+                  },
+                },
                 inputLabel: {
                   sx: {
+                    color: theme.palette.text.secondary,
                     '& .MuiFormLabel-asterisk': { color: 'red' },
+                    '& .MuiInputBase-input': {
+                      color: theme.palette.text.primary,
+                    },
                   },
                 },
               }}
@@ -60,7 +72,20 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
               label={label}
               multiline={multiline}
               rows={rows}
+              color="secondary"
               sx={{ bgcolor: 'white' }}
+              slotProps={{
+                input: {
+                  sx: {
+                    color: theme.palette.text.primary,
+                  },
+                },
+                inputLabel: {
+                  sx: {
+                    color: theme.palette.text.secondary,
+                  },
+                },
+              }}
             />
           )}
         />

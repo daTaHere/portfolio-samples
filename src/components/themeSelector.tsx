@@ -56,7 +56,6 @@ export const ThemeSelector = () => {
       />
 
       <Menu
-        id="theme-selector-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

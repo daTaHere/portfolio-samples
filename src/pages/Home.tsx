@@ -1,13 +1,14 @@
 import { Typography, Button, Container } from '@mui/material';
-import { ThemeSelector } from '../components/themeSelector';
+import { theme } from '../theme/defaultTheme';
+// import { ThemeSelector } from '../components/themeSelector';
 
 export default function Home() {
   return (
     <Container>
-      <Typography variant="h4" sx={{ textAlign: 'center' }}>
+      <Typography variant="h4" color="secondary" sx={{ textAlign: 'center' }}>
         Welcome to the Home Page
       </Typography>
-      <ThemeSelector />
+      {/* <ThemeSelector /> */}
     </Container>
   );
 }
