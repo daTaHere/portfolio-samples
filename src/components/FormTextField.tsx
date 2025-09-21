@@ -1,7 +1,6 @@
 import React from 'react';
 import { TextField } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
-import type { Palette } from '@mui/icons-material';
 import { theme } from '../theme/defaultTheme';
 
 interface FormTextFieldProps {

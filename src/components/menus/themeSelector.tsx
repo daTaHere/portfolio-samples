@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Menu, MenuItem, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/SettingsOutlined';
-import { LightModeOutlined } from '@mui/icons-material';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import BrightnessMediumTwoToneIcon from '@mui/icons-material/BrightnessMediumTwoTone';
+import {
+  LightModeOutlined,
+  DarkMode,
+  BrightnessMediumTwoTone,
+} from '@mui/icons-material';
 import { useColorScheme } from '@mui/material/styles';
 
 type ThemeValue = 'system' | 'light' | 'dark';
@@ -14,51 +16,57 @@ interface ThemeOption {
   icon: React.ElementType;
 }
 
+interface ThemeSelectorProps {
+  onClose: () => void;
+}
+
 const themeOptions: ThemeOption[] = [
-  { label: 'System', value: 'system', icon: BrightnessMediumTwoToneIcon },
+  { label: 'System', value: 'system', icon: BrightnessMediumTwoTone },
   { label: 'Light', value: 'light', icon: LightModeOutlined },
-  { label: 'Dark', value: 'dark', icon: DarkModeIcon },
+  { label: 'Dark', value: 'dark', icon: DarkMode },
 ];
 
-export const ThemeSelector = () => {
+export const ThemeSelector: React.FC<ThemeSelectorProps> = ({ onClose }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const { mode, setMode } = useColorScheme();
+  const { setMode } = useColorScheme();
 
   const open = Boolean(anchorEl);
 
-  const handleOpen = (e: React.MouseEvent<SVGSVGElement>) => {
-    // e.currentTarget is SVGSVGElement, which extends HTMLElement → safe
-    setAnchorEl(e.currentTarget as unknown as HTMLElement);
+  const handleOpen = (e: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(e.currentTarget);
   };
 
-  const handleClose = (e: React.MouseEvent<HTMLElement>) => {
-    const selectedValue = e.currentTarget.dataset.value as
-      | ThemeValue
-      | undefined;
-    if (selectedValue) {
-      setMode(selectedValue);
-      localStorage.setItem('theme-mode', selectedValue); // persist choice
-    }
-    console.log('After mode:', mode);
+  const handleMenuClose = () => {
     setAnchorEl(null);
   };
 
+  const handleThemeSelect = (value: ThemeValue) => {
+    setMode(value);
+    localStorage.setItem('theme-mode', value);
+    setAnchorEl(null);
+    onClose();
+  };
   return (
     <>
-      <SettingsIcon
-        fontSize="large"
+      {/* Trigger for submenu */}
+      <MenuItem
+        onClick={handleOpen}
         id="theme-selector-button"
         aria-controls={open ? 'theme-selector-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        onClick={handleOpen}
-        sx={{ pl: { xs: 1, sm: 0 }, cursor: 'pointer' }}
-      />
+      >
+        <SettingsIcon fontSize="small" color="primary" />
+        <Typography variant="body2" sx={{ px: 1 }}>
+          Theme
+        </Typography>
+      </MenuItem>
 
+      {/* Submenu */}
       <Menu
         anchorEl={anchorEl}
+        onClose={handleMenuClose}
         open={open}
-        onClose={handleClose}
         slotProps={{
           root: { 'aria-labelledby': 'theme-selector-button' },
         }}
@@ -69,9 +77,9 @@ export const ThemeSelector = () => {
             <MenuItem
               key={option.value}
               data-value={option.value}
-              onClick={handleClose}
+              onClick={() => handleThemeSelect(option.value)}
             >
-              <Icon fontSize="small" />
+              <Icon fontSize="small" color="secondary" />
               <Typography variant="body2" sx={{ px: 1 }}>
                 {option.label}
               </Typography>
