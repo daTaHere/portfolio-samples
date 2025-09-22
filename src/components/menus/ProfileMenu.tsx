@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 
 import addimg from '../../assets/Avatar/addimg.png';
-import { useAuth } from '../../context/AuthContext';
+import { useAuthContext } from '../../context/AuthContext';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { ThemeSelector } from './themeSelector';
 
@@ -19,7 +19,7 @@ interface ProfileMenuProps {
 }
 
 export const ProfileMenu: React.FC<ProfileMenuProps> = ({ onClose }) => {
-  const { user, logout } = useAuth();
+  const { user, logout } = useAuthContext();
   const [anchorElProfile, setAnchorElProfile] = useState<null | HTMLElement>(
     null
   );

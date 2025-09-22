@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
-// import { NavBar } from '../components/NavBar';
 import Footer from '../components/Footer';
-import { NavBarV2 } from '../components/NavBarV2';
+import { NavBar } from '../components/NavBar';
 import { Box } from '@mui/material';
 
 export default function DefaultLayout() {
@@ -14,7 +13,7 @@ export default function DefaultLayout() {
         alignItems: 'center',
       }}
     >
-      <NavBarV2 />
+      <NavBar />
       <Outlet />
       <Footer />
     </Box>

@@ -1,6 +1,4 @@
-import { Typography, Button, Container } from '@mui/material';
-import { theme } from '../theme/defaultTheme';
-// import { ThemeSelector } from '../components/themeSelector';
+import { Typography, Container } from '@mui/material';
 
 export default function Home() {
   return (
