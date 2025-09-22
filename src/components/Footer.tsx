@@ -1,23 +1,41 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, IconButton, Typography } from '@mui/material';
+import { footerIcons } from '../config/footerIcons';
 
 function Footer() {
   return (
-    <Box
-      component="footer"
-      sx={{
-        py: 2,
-        mt: 'auto',
-        textAlign: 'center',
-        minWidth: '100vw',
-        bgcolor: 'background.paper',
-      }}
-    >
-      <Container maxWidth="sm">
-        <Typography variant="body2">
-          © {new Date().getFullYear()} My App
-        </Typography>
-      </Container>
-    </Box>
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+          minWidth: '100vw',
+          mt: 'auto',
+          alignItems: 'center',
+          bgcolor: 'background.paper',
+          boxShadow: 2,
+        }}
+      >
+        <Container
+          maxWidth="xl"
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            my: 1,
+          }}
+        >
+          <Typography variant="body2" gutterBottom>
+            © 2025 Adam Huynh. All rights reserved.
+          </Typography>
+          <Box>
+            {footerIcons.map(({ icon: Icon, label, url }) => (
+              <IconButton color="inherit" key={label} href={url}>
+                <Icon />
+              </IconButton>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 }
 

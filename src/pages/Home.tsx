@@ -6,7 +6,6 @@ export default function Home() {
       <Typography variant="h4" color="secondary" sx={{ textAlign: 'center' }}>
         Welcome to the Home Page
       </Typography>
-      {/* <ThemeSelector /> */}
     </Container>
   );
 }
