@@ -13,53 +13,13 @@ import {
   Tooltip,
 } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import Avator1 from '../../assets/Avatar/avatar-1.jpg';
-import Avator2 from '../../assets/Avatar/avatar-2.jpg';
-import Avator3 from '../../assets/Avatar/avatar-3.jpg';
+import { mockNotifications } from '../../data/mockNotifications';
 import addimg from '../../assets/Avatar/addimg.png';
-
-interface Notification {
-  id: number;
-  read: boolean;
-  sender: string;
-  image: string;
-  message: string;
-}
 
 interface DotBadgeProps {
   color?: string; // custom color (default MUI theme.secondary.main)
   children?: React.ReactNode;
 }
-
-const NotificationList: Notification[] = [
-  {
-    id: 1,
-    read: false,
-    image: Avator1,
-    sender: 'Kristin Watson',
-    // date: '2 hours ago',
-    // time: '2:19 PM',
-    message: `Krisitn Watsan like your comment on course Javascript Introduction!`,
-  },
-  {
-    id: 2,
-    read: true,
-    image: Avator2,
-    sender: 'Brooklyn Simmons',
-    // date: 'Oct 9,',
-    // time: '1:20 PM',
-    message: `Just launched a new Courses React for Beginner.`,
-  },
-  {
-    id: 3,
-    read: true,
-    image: Avator3,
-    sender: 'Jenny Wilson',
-    // date: 'Oct 9,',
-    // time: '1:56 PM',
-    message: `Krisitn Watsan like your comment on course Javascript Introduction!`,
-  },
-];
 
 const DotBadge: React.FC<DotBadgeProps> = ({ color, children }) => {
   return (
@@ -107,12 +67,12 @@ export const NotificationMenu = () => {
         </Typography>
         <Divider />
         <List sx={{ maxHeight: 300, width: 300 }}>
-          {NotificationList.map((item, index) => (
+          {mockNotifications.map((item, index) => (
             <ListItem key={index} alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar
                   alt={item.sender}
-                  src={item.image || addimg}
+                  src={item.recipient.avatarUrl || addimg}
                   onError={(e: any) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = addimg;

@@ -1,5 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { publicRoutes } from './public';
-import { privateRoutes } from './private';
+import { routes } from '../config/routes';
 
-export const router = createBrowserRouter([privateRoutes, publicRoutes]);
+function mapRoutes(route: any) {
+  const { children, ...rest } = route;
+  return {
+    ...rest,
+    children: children?.map(mapRoutes),
+  };
+}
+
+export const router = createBrowserRouter(routes.map(mapRoutes));

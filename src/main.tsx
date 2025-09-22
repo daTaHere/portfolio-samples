@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { AuthProvider } from './context/AuthContext';
 import './index.css';
-import App from './App.tsx';
+import App from './App';
 import { theme } from './theme/defaultTheme';
 
 createRoot(document.getElementById('root')!).render(

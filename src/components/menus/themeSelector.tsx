@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { Menu, MenuItem, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/SettingsOutlined';
-import {
-  LightModeOutlined,
-  DarkMode,
-  BrightnessMediumTwoTone,
-} from '@mui/icons-material';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import BrightnessMediumTwoToneIcon from '@mui/icons-material/BrightnessMediumTwoTone';
 import { useColorScheme } from '@mui/material/styles';
 
 type ThemeValue = 'system' | 'light' | 'dark';
@@ -21,9 +19,9 @@ interface ThemeSelectorProps {
 }
 
 const themeOptions: ThemeOption[] = [
-  { label: 'System', value: 'system', icon: BrightnessMediumTwoTone },
-  { label: 'Light', value: 'light', icon: LightModeOutlined },
-  { label: 'Dark', value: 'dark', icon: DarkMode },
+  { label: 'System', value: 'system', icon: BrightnessMediumTwoToneIcon },
+  { label: 'Light', value: 'light', icon: LightModeOutlinedIcon },
+  { label: 'Dark', value: 'dark', icon: DarkModeIcon },
 ];
 
 export const ThemeSelector: React.FC<ThemeSelectorProps> = ({ onClose }) => {
