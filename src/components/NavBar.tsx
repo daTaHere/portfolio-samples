@@ -35,7 +35,7 @@ export const NavBar: React.FC = () => {
   };
 
   return (
-    <AppBar position="static" color="primary" sx={{ boxShadow: 1 }}>
+    <AppBar position="static" sx={{ boxShadow: 1 }}>
       <Container maxWidth="xl">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Box

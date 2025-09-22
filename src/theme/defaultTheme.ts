@@ -85,8 +85,8 @@ const typography = {
 
   // Smaller body text - Adjusted for mobile readability
   body2: {
-    fontSize: 'clamp(0.875rem, 2vw + 0.375rem, 1.125rem)', // Scales fluidly between 0.875rem and 1.125rem
-    fontWeight: 400,
+    fontSize: 'clamp(0.875rem, 1vw + 0.375rem, 1.125rem)', // Scales fluidly between 0.875rem and 1.125rem
+    fontWeight: 300,
     lineHeight: 1.5,
   },
 

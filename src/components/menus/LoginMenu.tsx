@@ -4,7 +4,6 @@ import { useTheme } from '@mui/material/styles';
 import { useAuthContext } from '../../context/AuthContext';
 import { mockAvailableUsers } from '../../data/mockAvailableUsers';
 import LoginIcon from '@mui/icons-material/Login';
-const userOptions = mockAvailableUsers;
 
 export const LoginMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -60,7 +59,7 @@ export const LoginMenu = () => {
           onClose={handleMenuClose}
           slotProps={{}}
         >
-          {userOptions.map((user) => {
+          {mockAvailableUsers.map((user) => {
             const Icon = user.icon;
             return (
               <MenuItem
