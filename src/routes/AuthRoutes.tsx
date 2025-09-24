@@ -1,17 +1,15 @@
-import DefaultLayout from '../layouts/DefaultLayout';
-import ProtectedRoute from './ProtectedRoute';
 import { lazy } from 'react';
+import ProtectedRoute from './ProtectedRoute';
 
 const View = lazy(() => import('../pages/PaginatedView'));
 
 export const authRoutes = [
   {
-    element: <ProtectedRoute allowedRoles={['user', 'admin']} />,
-    children: [
-      {
-        element: <DefaultLayout />,
-        children: [{ path: 'view', element: <View /> }],
-      },
-    ],
+    path: 'view',
+    element: (
+      <ProtectedRoute allowedRoles={['user', 'admin']}>
+        <View />
+      </ProtectedRoute>
+    ),
   },
 ];
