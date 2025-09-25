@@ -8,4 +8,5 @@ export const navLinks: NavLink[] = [
   { label: 'Dashboard', path: '/view' },
   { label: 'Login', path: '/login' },
   { label: 'Contact Us', path: '/contact' },
+  { label: 'Edit Form', path: '/edit' },
 ];

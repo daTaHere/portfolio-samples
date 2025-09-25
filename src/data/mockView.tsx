@@ -1,3 +1,6 @@
+import { mockUsers } from './mockUsers';
+const user = mockUsers;
+
 export const mockViewList = {
   totalItems: 11,
   pageSize: 8,
@@ -15,64 +18,72 @@ export const mockViewList = {
           image: '/image/avatar-2.jpg',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[3],
+          publish: true,
         },
         {
           id: 2,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[3],
+          publish: false,
         },
         {
           id: 3,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 4,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 5,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[3],
+          publish: true,
         },
         {
           id: 6,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[4],
+          publish: true,
         },
         {
           id: 7,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 8,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
       ],
     },
@@ -88,24 +99,27 @@ export const mockViewList = {
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[4],
+          publish: true,
         },
         {
           id: 10,
           image: '',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 11,
           image: '/image/avatar-2.jpg',
           header: 'Lizard',
           title: 'title',
-          content:
-            'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+          content: 'Lizards are a widespread group of ',
+          author: user[1],
+          publish: true,
         },
       ],
     },
