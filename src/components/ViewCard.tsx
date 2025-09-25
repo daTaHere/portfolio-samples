@@ -1,8 +1,9 @@
 import {
   Typography,
+  Badge,
   Card,
   CardMedia,
-  CardHeader,
+  Divider,
   CardContent,
   CardActions,
   Box,
@@ -16,62 +17,88 @@ import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone';
 import type { ViewCard } from '../types/ViewCard';
 import { useAuthContext } from '../context/AuthContext';
+import { useTheme } from '@mui/material/styles';
 
 type ViewCardProps = {
   cardData: ViewCard;
 };
-
-// Gradient hover wrapper
-const CardWrapper = styled(Box)(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  overflow: 'visible',
-  '&:hover::before': {
-    content: '""',
-    position: 'absolute',
-    inset: -5,
-    zIndex: -1,
-    borderRadius: 'inherit',
-    background: theme.effect.hoverGlow[theme.palette.mode],
-    filter: 'blur(5px)',
-    opacity: 0.55,
-    transition: 'opacity 0.3s, transform 0.3s',
-    // transform: 'translate3d(0, 0, 0) scale(1)',
-    transform: 'translateY(-4px)',
-    boxShadow: theme.shadows[6],
-  },
-}));
 
 const StyledCard = styled(Card)(({ theme }) => ({
   position: 'relative',
   maxWidth: 345,
   margin: '0 auto',
   borderRadius: theme.shape.borderRadius,
-  overflow: 'hidden',
   boxShadow: theme.shadows[3],
   transition: 'transform 0.2s',
+  overflow: 'visible',
+  // Gradient hover wrapper
+  '&:hover::before': {
+    content: '""',
+    position: 'absolute',
+    inset: -8,
+    zIndex: -1,
+    borderRadius: 'inherit',
+    background: theme.effect.hoverGlow[theme.palette.mode],
+    filter: 'blur(5px)',
+    opacity: 0.55,
+    transition: 'opacity 0.3s, transform 0.3s, box-shadow 0.3s',
+    transform: 'translateY(-2px)',
+    boxShadow: theme.shadows[6],
+  },
 }));
 
 export const CardView: React.FC<ViewCardProps> = ({ cardData }) => {
   const { user } = useAuthContext();
+  const theme = useTheme();
+  const canDelete: boolean = cardData.publish;
+  const canEdit: boolean = user?.id === cardData.author?.id;
+  const isAuthor: boolean = user?.roles.includes('admin') ? true : false;
 
   return (
     <Grid
       size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
       sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}
     >
-      <CardWrapper>
+      <Box>
         <StyledCard>
-          <CardMedia
-            component="img"
-            height={300}
-            image={cardData.image}
-            alt={cardData.title}
-            sx={{ cursor: 'pointer', objectFit: 'cover' }}
-            onClick={() => console.log(`Clicked card ${cardData.id}`)}
-          />
+          <Box
+            sx={{
+              position: 'relative',
+              display: 'flex',
+              justifyContent: 'end',
+            }}
+          >
+            <CardMedia
+              component="img"
+              height={300}
+              image={cardData.image}
+              alt={cardData.title}
+              sx={{ cursor: 'pointer', objectFit: 'cover' }}
+              onClick={() => console.log(`Clicked card ${cardData.id}`)}
+            />
+            {/* Overlay Badge/Chip */}
+            {isAuthor && canDelete && (
+              <Badge
+                badgeContent="Published"
+                sx={{
+                  position: 'absolute',
+                  top: 20,
+                  right: 50,
+                  '& .MuiBadge-badge': {
+                    fontSize: theme.typography.caption,
+                    fontWeight: 'bold',
+                    p: 1,
+                    borderRadius: '6px',
+                    bgcolor: theme.palette.primary['light'],
+                    color: theme.palette.common.white,
+                  },
+                }}
+              />
+            )}
+          </Box>
           <CardContent>
             <Typography
               variant="body1"
@@ -80,11 +107,7 @@ export const CardView: React.FC<ViewCardProps> = ({ cardData }) => {
             >
               {cardData.header}
             </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              // sx={{ fontSize: 'clamp(0.8rem, 1vw + 0.5rem, 1rem)' }}
-            >
+            <Typography variant="body2" color="text.secondary">
               {cardData.content}
             </Typography>
           </CardContent>
@@ -113,19 +136,35 @@ export const CardView: React.FC<ViewCardProps> = ({ cardData }) => {
             </Stack>
           </CardContent>
 
-          {user?.roles.includes('admin') && (
-            <CardActions>
-              <FormGroup sx={{ flexGrow: 1 }}>
-                <FormControlLabel control={<Checkbox />} label="Publish" />
-              </FormGroup>
-              <Stack direction="row" spacing={1}>
-                <DeleteOutlineIcon color="primary" />
-                <ModeEditOutlineOutlinedIcon color="primary" />
-              </Stack>
-            </CardActions>
+          {(isAuthor || canEdit) && (
+            <>
+              <Divider
+                variant="middle"
+                sx={{
+                  bgcolor: theme.palette.background.default,
+                }}
+              />
+              <CardActions
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  px: 1.5,
+                }}
+              >
+                {canDelete ? (
+                  <DeleteOutlineIcon color="primary" fontSize="large" />
+                ) : (
+                  <AddCircleOutlineTwoToneIcon
+                    color="secondary"
+                    fontSize="large"
+                  />
+                )}
+                {canEdit && <ModeEditOutlineOutlinedIcon fontSize="large" />}
+              </CardActions>
+            </>
           )}
         </StyledCard>
-      </CardWrapper>
+      </Box>
     </Grid>
   );
 };

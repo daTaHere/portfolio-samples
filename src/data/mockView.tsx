@@ -1,3 +1,6 @@
+import { mockUsers } from './mockUsers';
+const user = mockUsers;
+
 export const mockViewList = {
   totalItems: 11,
   pageSize: 8,
@@ -16,6 +19,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[3],
+          publish: true,
         },
         {
           id: 2,
@@ -23,6 +28,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[3],
+          publish: false,
         },
         {
           id: 3,
@@ -30,6 +37,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 4,
@@ -37,6 +46,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 5,
@@ -44,6 +55,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[3],
+          publish: true,
         },
         {
           id: 6,
@@ -51,6 +64,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[4],
+          publish: true,
         },
         {
           id: 7,
@@ -58,6 +73,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 8,
@@ -65,6 +82,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
       ],
     },
@@ -81,6 +100,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[4],
+          publish: true,
         },
         {
           id: 10,
@@ -88,6 +109,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[2],
+          publish: true,
         },
         {
           id: 11,
@@ -95,6 +118,8 @@ export const mockViewList = {
           header: 'Lizard',
           title: 'title',
           content: 'Lizards are a widespread group of ',
+          author: user[1],
+          publish: true,
         },
       ],
     },
