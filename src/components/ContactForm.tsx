@@ -36,7 +36,10 @@ const ContactForm: React.FC = () => {
       <form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
         <Grid container spacing={2}>
           {/* First Name */}
-          <Grid size={{ xs: 12, sm: 6 }}>
+          <Grid
+            size={{ xs: 12, sm: 6 }}
+            // sx={{ display: 'flex', justifyContent: 'center' }}
+          >
             <FormTextField
               name="firstName"
               label="First Name"

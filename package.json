@@ -15,6 +15,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@mui/icons-material": "^7.3.2",
     "@mui/material": "^7.3.2",
+    "@tiptap/extension-placeholder": "^3.6.1",
     "@tiptap/react": "^3.5.2",
     "@tiptap/starter-kit": "^3.5.2",
     "dompurify": "^3.2.7",

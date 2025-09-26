@@ -8,7 +8,11 @@ function ContactUs() {
       <Grid container spacing={4}>
         <Grid
           size={{ xs: 12, md: 6 }}
-          sx={{ p: { xs: 3, md: 5, lg: 12, xl: 22 }, alignContent: 'center' }}
+          sx={{
+            p: { xs: 3, md: 5, lg: 12, xl: 22 },
+            alignContent: 'center',
+            bgcolor: 'background.paper',
+          }}
         >
           <Box
             component="img"
@@ -46,7 +50,6 @@ function ContactUs() {
           sx={{
             p: { xs: 3, md: 5, lg: 12, xl: 22 },
             alignContent: 'center',
-            bgcolor: 'background.paper',
           }}
         >
           <ContactForm />

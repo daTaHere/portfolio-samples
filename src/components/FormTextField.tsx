@@ -35,28 +35,29 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
               fullWidth
               label={label}
               color="secondary"
+              size="small"
               required
               multiline={multiline}
               rows={rows}
               error={!!errors[name]}
               // helperText={errors[name]?.message as string}
-              sx={{ bgcolor: 'white' }}
-              slotProps={{
-                input: {
-                  sx: {
-                    color: theme.palette.text.primary,
-                  },
-                },
-                inputLabel: {
-                  sx: {
-                    color: theme.palette.text.secondary,
-                    '& .MuiFormLabel-asterisk': { color: 'red' },
-                    '& .MuiInputBase-input': {
-                      color: theme.palette.text.primary,
-                    },
-                  },
-                },
-              }}
+              // sx={{ bgcolor: 'white' }}
+              // slotProps={{
+              //   input: {
+              //     sx: {
+              //       color: theme.palette.text.primary,
+              //     },
+              //   },
+              //   inputLabel: {
+              //     sx: {
+              //       color: theme.palette.text.secondary,
+              //       '& .MuiFormLabel-asterisk': { color: 'red' },
+              //       '& .MuiInputBase-input': {
+              //         color: theme.palette.text.primary,
+              //       },
+              //     },
+              //   },
+              // }}
             />
           )}
         />
@@ -67,24 +68,25 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
           render={({ field }) => (
             <TextField
               {...field}
+              size="small"
               fullWidth
               label={label}
               multiline={multiline}
               rows={rows}
               color="secondary"
-              sx={{ bgcolor: 'white' }}
-              slotProps={{
-                input: {
-                  sx: {
-                    color: theme.palette.text.primary,
-                  },
-                },
-                inputLabel: {
-                  sx: {
-                    color: theme.palette.text.secondary,
-                  },
-                },
-              }}
+              // sx={{ bgcolor: 'white', borderRadius: 1 }}
+              // slotProps={{
+              //   input: {
+              //     sx: {
+              //       color: theme.palette.text.primary,
+              //     },
+              //   },
+              //   inputLabel: {
+              //     sx: {
+              //       color: theme.palette.text.secondary,
+              //     },
+              //   },
+              // }}
             />
           )}
         />
