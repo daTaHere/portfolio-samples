@@ -1,3 +1,5 @@
+import * as z from 'zod';
+
 export interface User {
   id: number;
   firstName: string;
@@ -6,6 +8,16 @@ export interface User {
   avatarUrl?: string;
   roles: string[];
 }
+
+export const UserSchema = z.object({
+  id: z.number(),
+  firstName: z.string(),
+  lastName: z.string(),
+  email: z.string().email(),
+  avatarUrl: z.string().optional(),
+  roles: z.array(z.string()),
+});
+
 export type Role = 'user1' | 'user2' | 'admin' | 'borrower' | 'merchant';
 
 export interface AvailableUser {
