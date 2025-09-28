@@ -1,8 +1,8 @@
 import { Grid, Container } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { ViewDetailCard } from '../components/ViewDetailCard';
-import { ViewCarousel } from '../components/ViewCarousel';
-import { ViewVideoPlayer } from '../components/ViewVideoPlayer';
+import { ContentCard } from '../components/viewDetail/ContentCard';
+import { Carousel } from '../components/viewDetail/Carousel';
+import { VideoPlayer } from '../components/viewDetail/VideoPlayer';
 
 // Types (adapt these if you have them defined elsewhere)
 export interface Author {
@@ -58,18 +58,18 @@ const ViewDetails = () => {
       <Grid container spacing={4}>
         {/* Left column: images */}
         <Grid size={{ xs: 12, sm: 6 }}>
-          <ViewCarousel />
+          <Carousel />
         </Grid>
         {/* Right column: story + author info */}
         <Grid size={{ xs: 12, sm: 6 }} sx={{ alignContent: 'center' }}>
-          <ViewDetailCard viewData={DetailedData} />
+          <ContentCard viewData={DetailedData} />
         </Grid>
       </Grid>
 
       {/* Video section */}
       <Grid container justifyContent="center" sx={{ mt: 10 }}>
         <Grid size={{ xs: 12, sm: 8 }}>
-          <ViewVideoPlayer media={DetailedData} />
+          <VideoPlayer media={DetailedData} />
         </Grid>
       </Grid>
     </Container>

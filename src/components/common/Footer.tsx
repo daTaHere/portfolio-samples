@@ -1,5 +1,5 @@
 import { Box, Container, IconButton, Typography } from '@mui/material';
-import { footerIcons } from '../config/footerIcons';
+import { footerIcons } from '../../config/footerIcons';
 
 function Footer() {
   return (

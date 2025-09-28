@@ -6,8 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import { useAuthContext } from '../context/AuthContext';
-import { ViewForm } from '../components/ViewForm';
-import { ViewPreview } from '../components/ViewPreview';
+import { ViewForm } from '../components/viewEdit/ViewForm';
+import { ViewPreview } from '../components/viewEdit/ViewPreview';
 import { UserSchema, type User } from '../types/user';
 import * as z from 'zod';
 

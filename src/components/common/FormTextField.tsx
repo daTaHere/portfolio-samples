@@ -1,8 +1,5 @@
-import React from 'react';
 import { TextField } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
-import { theme } from '../theme/defaultTheme';
-
 interface FormTextFieldProps {
   name: string;
   label: string;

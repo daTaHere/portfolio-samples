@@ -1,12 +1,12 @@
 import { Box } from '@mui/material';
 import ReactPlayer from 'react-player';
-import type { ViewData } from '../pages/ViewDetails';
+import type { ViewData } from '../../pages/ViewDetails';
 
-type ViewVideoPlayerProps = {
+type VideoPlayerProps = {
   media: ViewData;
 };
 
-export const ViewVideoPlayer: React.FC<ViewVideoPlayerProps> = ({ media }) => {
+export const VideoPlayer: React.FC<VideoPlayerProps> = ({ media }) => {
   return (
     <Box
       sx={{

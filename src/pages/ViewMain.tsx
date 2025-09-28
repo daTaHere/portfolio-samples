@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Typography, Container, Grid } from '@mui/material';
 import { mockViewList } from '../data/mockView';
-import { CardView } from '../components/ViewCard';
-import { PaginateSelector } from '../components/PaginateSelector';
+import { CardView } from '../components/viewMain/ViewCard';
+import { PaginateSelector } from '../components/viewMain/PaginateSelector';
 import type { ViewCard } from '../types/ViewCard';
 
 type ViewState = {
@@ -15,7 +15,7 @@ type ViewState = {
   // isChecked: boolean | null;
 };
 
-export default function PaginatedView() {
+export default function ViewMain() {
   const [pageIndex, setPage] = useState(0);
   const onPageClick = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value - 1);

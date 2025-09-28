@@ -8,10 +8,10 @@ import {
 } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import { useFormContext } from 'react-hook-form';
-import { DropzoneComponent } from './DropzoneComponent';
-import { FormTextField } from './FormTextField';
+import { FileUploader } from './FileUploader';
+import { FormTextField } from '../../components/common/FormTextField';
 import RichEditor from './RichEditor';
-import type { ViewFormData } from '../pages/View';
+import type { ViewFormData } from '../../pages/ViewEdit';
 
 type ViewFormProps = {
   handleFileSelect: (file: File) => void;
@@ -69,7 +69,7 @@ export const ViewForm: React.FC<ViewFormProps> = ({
             </FormControl>
           )}
         />
-        <DropzoneComponent onFileSelect={handleFileSelect} />
+        <FileUploader onFileSelect={handleFileSelect} />
       </Stack>
       <Button type="submit" variant="contained" sx={{ mt: 2 }}>
         Submit

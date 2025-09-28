@@ -2,7 +2,7 @@ import { memo } from 'react';
 import Slider from 'react-slick';
 import type { Settings } from 'react-slick';
 import { Box, CardMedia, GlobalStyles } from '@mui/material';
-import { mockSildes } from '../data/mockSlides';
+import { mockSildes } from '../../data/mockSlides';
 
 const slides = [
   { id: 1, src: mockSildes[0] },
@@ -10,7 +10,7 @@ const slides = [
   { id: 3, src: mockSildes[2] },
 ];
 
-export const ViewCarousel = memo(() => {
+export const Carousel = memo(() => {
   const settings: Settings = {
     customPaging: (i: number) => (
       <CardMedia

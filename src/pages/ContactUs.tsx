@@ -1,5 +1,5 @@
 import { Box, Typography, Link, Grid } from '@mui/material';
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../components/contactUs/ContactForm';
 import Phone from '../assets/phone icon.png';
 
 function ContactUs() {
