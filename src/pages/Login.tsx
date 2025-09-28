@@ -5,9 +5,9 @@ function Login() {
   return (
     <Box
       display="flex"
+      flexGrow={1}
       justifyContent="center"
       alignItems="center"
-      minHeight="80vh"
     >
       <LoginForm />
     </Box>

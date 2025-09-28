@@ -5,6 +5,8 @@ import { AuthProvider } from './context/AuthContext';
 import './index.css';
 import App from './App';
 import { theme } from './theme/defaultTheme';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
