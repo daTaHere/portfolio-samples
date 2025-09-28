@@ -11,15 +11,12 @@ import {
   Stack,
   Grid,
 } from '@mui/material';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone';
-import type { ViewCard } from '../types/ViewCard';
-import { useAuthContext } from '../context/AuthContext';
+import type { ViewCard } from '../../types/ViewCard';
+import { useAuthContext } from '../../context/AuthContext';
 import { useTheme } from '@mui/material/styles';
 
 type ViewCardProps = {

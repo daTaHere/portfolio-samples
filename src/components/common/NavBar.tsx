@@ -5,24 +5,24 @@ import {
   IconButton,
   Menu,
   Box,
-  useMediaQuery,
+  // useMediaQuery,
   Container,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import Logo from '../assets/react.svg';
+import Logo from '../../assets/react.svg';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
-import { ThemeSelector } from './menus/themeSelector';
-import { MainNavMenu } from './menus/MainNavMenu';
-import { LoginMenu } from './menus/LoginMenu';
-import { NotificationMenu } from '../components/menus/NotificationMenu';
-import { ProfileMenu } from './menus/ProfileMenu';
-import { useAuthContext } from '../context/AuthContext';
+import { ThemeSelector } from '../menus/themeSelector';
+import { MainNavMenu } from '../menus/MainNavMenu';
+import { LoginMenu } from '../menus/LoginMenu';
+import { NotificationMenu } from '../menus/NotificationMenu';
+import { ProfileMenu } from '../menus/ProfileMenu';
+import { useAuthContext } from '../../context/AuthContext';
 
 export const NavBar: React.FC = () => {
   const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
-  const isLaptop = useMediaQuery(theme.breakpoints.up('md'));
+  // const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  // const isLaptop = useMediaQuery(theme.breakpoints.up('md'));
 
   const { user } = useAuthContext();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

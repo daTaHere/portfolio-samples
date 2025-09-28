@@ -3,9 +3,9 @@ import { Box, Typography } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
-import { theme } from '../theme/defaultTheme';
+import { theme } from '../../theme';
 
-export const DropzoneComponent: React.FC<{
+export const FileUploader: React.FC<{
   onFileSelect: (file: File) => void;
 }> = ({ onFileSelect }) => {
   const onDrop = useCallback(

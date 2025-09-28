@@ -2,7 +2,7 @@ import { Button, Grid } from '@mui/material';
 import { useForm, FormProvider } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { FormTextField } from '../components/FormTextField';
+import { FormTextField } from '../../components/common/FormTextField';
 
 // ✅ Zod schema
 const contactUsSchema = z.object({
@@ -15,7 +15,7 @@ const contactUsSchema = z.object({
 
 type ContactUsFormData = z.infer<typeof contactUsSchema>;
 
-const ContactForm: React.FC = () => {
+const ContactForm = () => {
   const methods = useForm<ContactUsFormData>({
     resolver: zodResolver(contactUsSchema),
     defaultValues: {

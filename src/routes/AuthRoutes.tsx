@@ -1,14 +1,14 @@
 import { lazy } from 'react';
 import ProtectedRoute from './ProtectedRoute';
 
-const View = lazy(() => import('../pages/PaginatedView'));
+const ViewMain = lazy(() => import('../pages/ViewMain'));
 
 export const authRoutes = [
   {
     path: 'view',
     element: (
       <ProtectedRoute allowedRoles={['user', 'admin']}>
-        <View />
+        <ViewMain />
       </ProtectedRoute>
     ),
   },

@@ -1,15 +1,15 @@
 import { lazy } from 'react';
 
-const HomePage = lazy(() => import('../pages/Home'));
-const LoginPage = lazy(() => import('../pages/Login'));
-const ContactPage = lazy(() => import('../pages/ContactUs'));
-const EditView = lazy(() => import('../pages/View'));
+const Home = lazy(() => import('../pages/Home'));
+const Login = lazy(() => import('../pages/Login'));
+const ContactUs = lazy(() => import('../pages/ContactUs'));
+const ViewEdit = lazy(() => import('../pages/ViewEdit'));
 const ViewDetails = lazy(() => import('../pages/ViewDetails'));
 
 export const publicRoutes = [
-  { index: true, element: <HomePage /> },
-  { path: 'login', element: <LoginPage /> },
-  { path: 'contact', element: <ContactPage /> },
-  { path: 'edit', element: <EditView /> },
+  { index: true, element: <Home /> },
+  { path: 'login', element: <Login /> },
+  { path: 'contact', element: <ContactUs /> },
+  { path: 'edit', element: <ViewEdit /> },
   { path: 'details', element: <ViewDetails /> },
 ];

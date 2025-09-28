@@ -5,20 +5,21 @@ import {
   Stack,
   Container,
 } from '@mui/material';
-import type { ViewData } from '../pages/ViewDetails';
+import type { ViewData } from '../../pages/ViewDetails';
+import formatUtcHelper from '../../utils/formatUtcHelper';
 
-type ViewDetailCardProps = {
+type ContentCardProps = {
   viewData: ViewData;
 };
 
-export const formatUTCDate = (utcDate: string) => {
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'short',
-  }).format(new Date(utcDate));
-};
+// export const formatUTCDate = (utcDate: string) => {
+//   return new Intl.DateTimeFormat('en-US', {
+//     year: 'numeric',
+//     month: 'short',
+//   }).format(new Date(utcDate));
+// };
 
-export const ViewDetailCard: React.FC<ViewDetailCardProps> = ({ viewData }) => {
+export const ContentCard: React.FC<ContentCardProps> = ({ viewData }) => {
   return (
     <Container>
       <CardContent>
@@ -43,7 +44,7 @@ export const ViewDetailCard: React.FC<ViewDetailCardProps> = ({ viewData }) => {
             </Typography>
             <Typography variant="caption">
               <strong>Published:</strong>{' '}
-              {formatUTCDate(viewData.datePublished)}
+              {formatUtcHelper(viewData.datePublished)}
             </Typography>
           </Stack>
         </Stack>
