@@ -4,11 +4,10 @@ import { useForm, FormProvider } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useLocation, useNavigate } from 'react-router-dom';
-import DOMPurify from 'dompurify';
 import { useAuthContext } from '../context/AuthContext';
-import { ViewForm } from '../components/viewEdit/ViewForm';
-import { ViewPreview } from '../components/viewEdit/ViewPreview';
+import { ViewForm, ViewPreview } from '../components/viewEdit';
 import { UserSchema, type User } from '../types/user';
+import DOMPurify from 'dompurify';
 import * as z from 'zod';
 
 export interface ViewInput {

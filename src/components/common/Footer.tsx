@@ -1,7 +1,7 @@
 import { Box, Container, IconButton, Typography } from '@mui/material';
 import { footerIcons } from '../../config/footerIcons';
 
-function Footer() {
+export const Footer = () => {
   return (
     <>
       <Box
@@ -37,6 +37,4 @@ function Footer() {
       </Box>
     </>
   );
-}
-
-export default Footer;
+};

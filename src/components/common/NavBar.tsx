@@ -11,12 +11,13 @@ import {
 import { useTheme } from '@mui/material/styles';
 import Logo from '../../assets/react.svg';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-
-import { ThemeSelector } from '../menus/themeSelector';
-import { MainNavMenu } from '../menus/MainNavMenu';
-import { LoginMenu } from '../menus/LoginMenu';
-import { NotificationMenu } from '../menus/NotificationMenu';
-import { ProfileMenu } from '../menus/ProfileMenu';
+import {
+  ThemeSelector,
+  LoginMenu,
+  MainNavMenu,
+  NotificationMenu,
+  ProfileMenu,
+} from '../menus';
 import { useAuthContext } from '../../context/AuthContext';
 
 export const NavBar: React.FC = () => {
