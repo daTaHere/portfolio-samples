@@ -47,7 +47,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-export const CardView: React.FC<ViewCardProps> = ({ cardData }) => {
+export const ViewCards: React.FC<ViewCardProps> = ({ cardData }) => {
   const { user } = useAuthContext();
   const theme = useTheme();
   const canDelete: boolean = cardData.publish;

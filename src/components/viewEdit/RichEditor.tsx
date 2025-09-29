@@ -23,7 +23,7 @@ interface RichEditorProps {
   onChange: (html: string) => void;
 }
 
-const RichEditor: React.FC<RichEditorProps> = ({ value, onChange }) => {
+export const RichEditor: React.FC<RichEditorProps> = ({ value, onChange }) => {
   const theme = useTheme();
   const [focused, setFocused] = useState(false);
 
@@ -173,5 +173,3 @@ const RichEditor: React.FC<RichEditorProps> = ({ value, onChange }) => {
     </Box>
   );
 };
-
-export default RichEditor;

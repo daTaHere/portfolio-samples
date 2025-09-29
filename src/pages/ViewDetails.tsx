@@ -1,8 +1,6 @@
 import { Grid, Container } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { ContentCard } from '../components/viewDetail/ContentCard';
-import { Carousel } from '../components/viewDetail/Carousel';
-import { VideoPlayer } from '../components/viewDetail/VideoPlayer';
+import { Carousel, ContentCard, VideoPlayer } from '../components/viewDetail';
 
 // Types (adapt these if you have them defined elsewhere)
 export interface Author {

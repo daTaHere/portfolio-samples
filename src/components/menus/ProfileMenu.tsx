@@ -12,7 +12,7 @@ import {
 import addimg from '../../assets/Avatar/addimg.png';
 import { useAuthContext } from '../../context/AuthContext';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { ThemeSelector } from './themeSelector';
+import { ThemeSelector } from './ThemeSelector';
 
 interface ProfileMenuProps {
   onClose: () => void;

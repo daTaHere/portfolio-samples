@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Typography, Container, Grid } from '@mui/material';
 import { mockViewList } from '../data/mockView';
-import { CardView } from '../components/viewMain/ViewCard';
-import { PaginateSelector } from '../components/viewMain/PaginateSelector';
+import { ViewCards, PaginateSelector } from '../components/viewMain';
 import type { ViewCard } from '../types/ViewCard';
 
 type ViewState = {
@@ -17,7 +16,7 @@ type ViewState = {
 
 export default function ViewMain() {
   const [pageIndex, setPage] = useState(0);
-  const onPageClick = (event: React.ChangeEvent<unknown>, value: number) => {
+  const onPageClick = (_event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value - 1);
   };
 
@@ -43,7 +42,7 @@ export default function ViewMain() {
   }, [pageIndex]);
 
   const mapStories = (data: ViewCard) => {
-    return <CardView key={data.id} cardData={data} />;
+    return <ViewCards key={data.id} cardData={data} />;
   };
 
   return (
