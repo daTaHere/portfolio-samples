@@ -18,7 +18,7 @@ export const UserSchema = z.object({
   roles: z.array(z.string()),
 });
 
-export type Role = 'user1' | 'user2' | 'admin' | 'borrower' | 'merchant';
+export type Role = 'user1' | 'user2' | 'admin';
 
 export interface AvailableUser {
   id: number;

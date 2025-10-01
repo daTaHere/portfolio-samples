@@ -15,12 +15,12 @@ import { styled } from '@mui/material/styles';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone';
-import type { ViewCard } from '../../types/ViewCard';
+import type { Post } from '../../types/post';
 import { useAuthContext } from '../../context/AuthContext';
 import { useTheme } from '@mui/material/styles';
 
 type ViewCardProps = {
-  cardData: ViewCard;
+  postData: Post;
 };
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -47,11 +47,11 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-export const ViewCards: React.FC<ViewCardProps> = ({ cardData }) => {
+export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
   const { user } = useAuthContext();
   const theme = useTheme();
-  const canDelete: boolean = cardData.publish;
-  const canEdit: boolean = user?.id === cardData.author?.id;
+  const canDelete: boolean = postData.publish;
+  const canEdit: boolean = user?.id === postData.author?.id;
   const isAuthor: boolean = user?.roles.includes('admin') ? true : false;
 
   return (
@@ -70,11 +70,11 @@ export const ViewCards: React.FC<ViewCardProps> = ({ cardData }) => {
           >
             <CardMedia
               component="img"
-              height={300}
-              image={cardData.image}
-              alt={cardData.title}
-              sx={{ cursor: 'pointer', objectFit: 'cover' }}
-              onClick={() => console.log(`Clicked card ${cardData.id}`)}
+              height={200}
+              image={postData.media.mainImg}
+              alt={postData.title}
+              sx={{ cursor: 'pointer', objectFit: 'fill', p: 1 }}
+              onClick={() => console.log(`Clicked card ${postData.id}`)}
             />
             {/* Overlay Badge/Chip */}
             {isAuthor && canDelete && (
@@ -82,8 +82,8 @@ export const ViewCards: React.FC<ViewCardProps> = ({ cardData }) => {
                 badgeContent="Published"
                 sx={{
                   position: 'absolute',
-                  top: 20,
-                  right: 50,
+                  top: 18,
+                  right: 55,
                   '& .MuiBadge-badge': {
                     fontSize: theme.typography.caption,
                     fontWeight: 'bold',
@@ -96,22 +96,25 @@ export const ViewCards: React.FC<ViewCardProps> = ({ cardData }) => {
               />
             )}
           </Box>
-          <CardContent>
+          <CardContent sx={{ maxHeight: 200 }}>
             <Typography
               variant="body1"
               gutterBottom
               sx={{ fontWeight: 'bold' }}
             >
-              {cardData.header}
+              {postData.title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {cardData.content}
+            <Typography variant="body2" color="text.secondary" sx={{ px: 1 }}>
+              {postData.content.substring(0, 55) + '...'}
             </Typography>
           </CardContent>
 
           <CardContent>
             <Stack direction="row" spacing={2} alignItems="center">
-              <Avatar alt={cardData.header} src={cardData.image} />
+              <Avatar
+                src={postData.author.avatarUrl}
+                alt={postData.author.email}
+              />
               <Stack>
                 <Stack direction="row" spacing={1}>
                   <Typography variant="caption" fontWeight="bold">
@@ -132,7 +135,7 @@ export const ViewCards: React.FC<ViewCardProps> = ({ cardData }) => {
               </Stack>
             </Stack>
           </CardContent>
-
+          {/* Conditional render Action section base on role */}
           {(isAuthor || canEdit) && (
             <>
               <Divider

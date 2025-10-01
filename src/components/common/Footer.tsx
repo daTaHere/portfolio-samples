@@ -23,7 +23,7 @@ export const Footer = () => {
             my: 1,
           }}
         >
-          <Typography variant="body2" gutterBottom>
+          <Typography variant="caption" gutterBottom>
             © 2025 Adam Huynh. All rights reserved.
           </Typography>
           <Box>

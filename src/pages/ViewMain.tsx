@@ -1,17 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Typography, Container, Grid } from '@mui/material';
-import { mockViewList } from '../data/mockView';
-import { ViewCards, PaginateSelector } from '../components/viewMain';
-import type { ViewCard } from '../types/ViewCard';
+import { mockPost } from '../data/mockPost';
+import { ViewCard, PaginateSelector } from '../components/viewMain';
+import type { Post } from '../types/post';
 
 type ViewState = {
-  viewData: ViewCard[];
-  viewCards: React.ReactElement[];
+  viewData: Post[];
   pageIndex: number;
   pageSize: number;
   totalPages: number;
-  // isApproved: boolean;
-  // isChecked: boolean | null;
 };
 
 export default function ViewMain() {
@@ -22,32 +19,24 @@ export default function ViewMain() {
 
   const [viewState, setviewState] = useState<ViewState>({
     viewData: [],
-    viewCards: [],
     pageIndex: 0,
     pageSize: 0,
     totalPages: 0,
-    // isApproved: true,
-    // isChecked: null,
   });
   useEffect(() => {
-    const mockGetRequest = mockViewList;
+    const mockGetRequest = mockPost;
     const cardData = mockGetRequest.pages[pageIndex].data;
     setviewState((prevState) => {
       const newView = { ...prevState };
       newView.viewData = cardData;
-      newView.viewCards = newView.viewData.map(mapStories);
       newView.totalPages = mockGetRequest.totalPages;
       return newView;
     });
   }, [pageIndex]);
 
-  const mapStories = (data: ViewCard) => {
-    return <ViewCards key={data.id} cardData={data} />;
-  };
-
   return (
     <Container sx={{ my: 8 }}>
-      <Typography variant="h4" sx={{ textAlign: 'center' }} gutterBottom>
+      <Typography variant="h4" sx={{ textAlign: 'center' }}>
         Dashboard
       </Typography>
       <PaginateSelector
@@ -56,7 +45,9 @@ export default function ViewMain() {
         handleChange={onPageClick}
       />
       <Grid spacing={2} container>
-        {viewState.viewCards}
+        {viewState.viewData.map((data) => {
+          return <ViewCard postData={data} />;
+        })}
       </Grid>
     </Container>
   );
