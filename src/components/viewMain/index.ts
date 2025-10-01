@@ -1,2 +1,2 @@
 export { PaginateSelector } from './PaginateSelector';
-export { ViewCards } from './ViewCards';
+export { ViewCard } from './ViewCard';
