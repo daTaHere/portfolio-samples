@@ -21,9 +21,6 @@ export const LoginMenu = () => {
   };
 
   const handleLogin = (userId: number) => {
-    console.log('hit');
-    console.log(userId);
-
     login(userId);
     setAnchorEl(null);
   };
