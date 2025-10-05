@@ -3,6 +3,7 @@ import ProtectedRoute from './ProtectedRoute';
 
 const ViewMain = lazy(() => import('../pages/ViewMain'));
 const ViewEdit = lazy(() => import('../pages/ViewEdit'));
+const ViewDetails = lazy(() => import('../pages/ViewDetails'));
 
 export const authRoutes = [
   {
@@ -18,6 +19,14 @@ export const authRoutes = [
     element: (
       <ProtectedRoute allowedRoles={['registered', 'admin']}>
         <ViewEdit />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: 'details/:id',
+    element: (
+      <ProtectedRoute allowedRoles={['registered', 'admin']}>
+        <ViewDetails />
       </ProtectedRoute>
     ),
   },

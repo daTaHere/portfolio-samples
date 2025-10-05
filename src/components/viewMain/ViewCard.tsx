@@ -60,7 +60,7 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
       size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
       sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}
     >
-      <Box>
+      <Link to={`/details/${postData.id}`} style={{ textDecoration: 'none' }}>
         <StyledCard>
           <Box
             sx={{
@@ -103,7 +103,7 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
             <Typography
               variant="body1"
               gutterBottom
-              sx={{ fontWeight: 'bold' }}
+              sx={{ fontWeight: 'bold', textAlign: 'center' }}
             >
               {postData.title}
             </Typography>
@@ -167,7 +167,7 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
             </>
           )}
         </StyledCard>
-      </Box>
+      </Link>
     </Grid>
   );
 };
