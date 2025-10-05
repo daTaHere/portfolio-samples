@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Typography,
   Badge,
@@ -59,23 +60,25 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
       size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
       sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}
     >
-      <Box>
+      <Link to={`/details/${postData.id}`} style={{ textDecoration: 'none' }}>
         <StyledCard>
           <Box
             sx={{
               position: 'relative',
               display: 'flex',
-              justifyContent: 'end',
+              justifyContent: 'center',
             }}
           >
-            <CardMedia
-              component="img"
-              height={200}
-              image={postData.media.mainImg}
-              alt={postData.title}
-              sx={{ cursor: 'pointer', objectFit: 'fill', p: 1 }}
-              onClick={() => console.log(`Clicked card ${postData.id}`)}
-            />
+            <Link to={`/details/${postData.id}`}>
+              <CardMedia
+                component="img"
+                height={200}
+                image={postData.media.mainImg}
+                alt={postData.title}
+                sx={{ cursor: 'pointer', objectFit: 'fill', p: 1 }}
+              />
+            </Link>
+
             {/* Overlay Badge/Chip */}
             {isAuthor && canDelete && (
               <Badge
@@ -100,7 +103,7 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
             <Typography
               variant="body1"
               gutterBottom
-              sx={{ fontWeight: 'bold' }}
+              sx={{ fontWeight: 'bold', textAlign: 'center' }}
             >
               {postData.title}
             </Typography>
@@ -164,7 +167,7 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
             </>
           )}
         </StyledCard>
-      </Box>
+      </Link>
     </Grid>
   );
 };

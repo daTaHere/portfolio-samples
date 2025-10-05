@@ -2,7 +2,7 @@ import Avatar1 from '../assets/Avatar/avatar-1.jpg';
 import Avatar2 from '../assets/Avatar/avatar-2.jpg';
 import Avatar3 from '../assets/Avatar/avatar-3.jpg';
 
-export const mockPost = {
+export const mockPostPages = {
   totalItems: 18,
   pageSize: 8,
   totalPages: 3,
@@ -36,6 +36,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=Ke90Tje7VS0',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 2,
@@ -61,6 +62,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=w3jLJU7DT5E',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 3,
@@ -86,6 +88,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=_uQrJ0TkZlc',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 4,
@@ -112,6 +115,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=UB1O30fR-EE',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 5,
@@ -136,6 +140,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=vyJU9efvUtQ',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 6,
@@ -160,6 +165,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=3c-iBn73dDE',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 7,
@@ -185,6 +191,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=GhQdlIFylQ8',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 8,
@@ -212,6 +219,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=ulprqHHWlng',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
       ],
     },
@@ -246,6 +254,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=Z1RJmh_OqeA',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 10,
@@ -269,6 +278,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=woKYyhLCcnU',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 11,
@@ -294,6 +304,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=6cJrg1c2mPQ',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 12,
@@ -319,6 +330,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=2OHbjep_WjQ',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 13,
@@ -344,6 +356,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=7V5Jv3eJ6vI',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 14,
@@ -369,6 +382,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=qw--VYLpxG4',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 15,
@@ -393,6 +407,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=kjJse1XzXqg',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 16,
@@ -418,6 +433,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=X48VuDVv0do',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
       ],
     },
@@ -452,6 +468,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=BwuLxPH8IDs',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
         {
           id: 18,
@@ -477,6 +494,7 @@ export const mockPost = {
             ],
             video: 'https://www.youtube.com/watch?v=SLauY6PpjW4',
           },
+          datePublished: '2025-09-27T12:00:00Z',
         },
       ],
     },

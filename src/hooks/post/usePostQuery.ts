@@ -1,21 +1,14 @@
-import { useQuery, keepPreviousData } from '@tanstack/react-query';
-import { getPosts } from '../../services/postServices';
+import { useQuery } from '@tanstack/react-query';
+import { getPostById } from '../../services/postServices';
 import type { Post } from '../../types/post';
 
-type PostPage = {
-  page: number;
-  totalPages: number;
-  hasPrevPage: boolean;
-  hasNextPage: boolean;
-  nextPage: number | null;
-  prevPage: number | null;
-  data: Post[];
+type PostData = {
+  data: Post;
 };
 
-export const usePostsQuery = (page: number) =>
-  useQuery<PostPage>({
-    queryKey: ['posts', page],
-    queryFn: () => getPosts(page),
-    placeholderData: keepPreviousData,
+export const usePostQuery = (postId: number) =>
+  useQuery<PostData>({
+    queryKey: ['post', postId],
+    queryFn: () => getPostById(postId),
     staleTime: 1000 * 60 * 5,
   });
