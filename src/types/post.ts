@@ -20,4 +20,5 @@ export interface Post {
   publish: boolean;
   type: string;
   media: Media;
+  datePublished?: string;
 }

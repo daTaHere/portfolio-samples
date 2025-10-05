@@ -1,12 +1,11 @@
 import { Box } from '@mui/material';
 import ReactPlayer from 'react-player';
-import type { ViewData } from '../../pages/ViewDetails';
 
 type VideoPlayerProps = {
-  media: ViewData;
+  mediaData: string;
 };
 
-export const VideoPlayer: React.FC<VideoPlayerProps> = ({ media }) => {
+export const VideoPlayer: React.FC<VideoPlayerProps> = ({ mediaData }) => {
   return (
     <Box
       sx={{
@@ -17,10 +16,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ media }) => {
       }}
     >
       <ReactPlayer
-        src={
-          media.mediaId.videoUrl ??
-          'https://www.youtube.com/watch?v=jHm_ZxLTB40'
-        }
+        src={mediaData}
         controls
         width="95%"
         height="95%"

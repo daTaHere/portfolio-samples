@@ -5,46 +5,39 @@ import {
   Stack,
   Container,
 } from '@mui/material';
-import type { ViewData } from '../../pages/ViewDetails';
+import type { Post } from '../../types/post';
 import formatUtcHelper from '../../utils/formatUtcHelper';
 
 type ContentCardProps = {
-  viewData: ViewData;
+  postData: Post;
 };
 
-// export const formatUTCDate = (utcDate: string) => {
-//   return new Intl.DateTimeFormat('en-US', {
-//     year: 'numeric',
-//     month: 'short',
-//   }).format(new Date(utcDate));
-// };
-
-export const ContentCard: React.FC<ContentCardProps> = ({ viewData }) => {
+export const ContentCard: React.FC<ContentCardProps> = ({ postData }) => {
   return (
     <Container>
       <CardContent>
         <Typography variant="h5" textAlign="center" gutterBottom>
-          {viewData.name}
+          {postData.title}
         </Typography>
 
         <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
-          &ldquo;{viewData.story}&rdquo;
+          &ldquo;{postData.content}&rdquo;
         </Typography>
 
         <Stack direction="row" spacing={2} alignItems="center" mt={3}>
           <Avatar
-            src={viewData.createdBy.avatarUrl}
-            alt={`${viewData.createdBy.firstName} ${viewData.createdBy.lastName}`}
+            src={postData.author.avatarUrl}
+            alt={`Author Avatar`}
             sx={{ width: 50, height: 50 }}
           />
           <Stack>
             <Typography variant="caption">
               <strong>Author:</strong>{' '}
-              {`${viewData.createdBy.firstName} ${viewData.createdBy.lastName}`}
+              {`${postData.author.firstName} ${postData.author.lastName}`}
             </Typography>
             <Typography variant="caption">
               <strong>Published:</strong>{' '}
-              {formatUtcHelper(viewData.datePublished)}
+              {formatUtcHelper(postData.datePublished || '')}
             </Typography>
           </Stack>
         </Stack>

@@ -2,21 +2,19 @@ import { memo } from 'react';
 import Slider from 'react-slick';
 import type { Settings } from 'react-slick';
 import { Box, CardMedia, GlobalStyles } from '@mui/material';
-import { mockSildes } from '../../data/mockSlides';
 
-const slides = [
-  { id: 1, src: mockSildes[0] },
-  { id: 2, src: mockSildes[1] },
-  { id: 3, src: mockSildes[2] },
-];
+type CarouselProps = {
+  mediaData: string[];
+};
 
-export const Carousel = memo(() => {
+export const Carousel: React.FC<CarouselProps> = memo(({ mediaData }) => {
   const settings: Settings = {
     customPaging: (i: number) => (
       <CardMedia
         component="img"
-        image={mockSildes[i]}
+        image={mediaData[i]}
         sx={{
+          minHeight: '100px',
           objectFit: 'contain',
         }}
       />
@@ -30,36 +28,38 @@ export const Carousel = memo(() => {
     slidesToScroll: 1,
   };
 
+  console.log(mediaData);
+
   return (
     <Box>
       {/* Scoped CSS for thumbnails */}
       <GlobalStyles
         styles={{
           '.slider-container .slick-dots.slick-thumb': {
-            position: 'relative', // from absolute -> relative
-            marginBottom: 3, // small spacing
+            position: 'relative', // from absolute -> relativ
           },
           '.slider-container .slick-dots.slick-thumb li': {
-            width: 'calc(90% / 3 - 8px)', // if you want exactly 3 per row
+            width: 'calc(70% / 3 - 8px)', // if you want exactly 3 per row
             height: 'auto', // keep aspect ratio
+            marginLeft: '15px',
+            marginRight: '15px',
           },
-          '.slider-container .slick-dots.slick-thumb li button': {
+          '.slider-container .slick-dots.slick-thumb li im': {
             padding: 0,
           },
         }}
       />
 
-      <Box className="slider-container">
+      <Box id="kdk" className="slider-container">
         <Slider {...settings}>
-          {slides.map((slide) => (
+          {mediaData.map((slide) => (
             <CardMedia
-              key={slide.id}
+              key={mediaData.indexOf(slide)}
               component="img"
-              image={slide.src}
+              image={slide}
               sx={{
-                boxShadow: 5,
-                borderRadius: 1.5,
-                objectFit: 'cover',
+                height: 500,
+                objectFit: 'contain',
               }}
             />
           ))}

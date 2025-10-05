@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Typography,
   Badge,
@@ -65,17 +66,19 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
             sx={{
               position: 'relative',
               display: 'flex',
-              justifyContent: 'end',
+              justifyContent: 'center',
             }}
           >
-            <CardMedia
-              component="img"
-              height={200}
-              image={postData.media.mainImg}
-              alt={postData.title}
-              sx={{ cursor: 'pointer', objectFit: 'fill', p: 1 }}
-              onClick={() => console.log(`Clicked card ${postData.id}`)}
-            />
+            <Link to={`/details/${postData.id}`}>
+              <CardMedia
+                component="img"
+                height={200}
+                image={postData.media.mainImg}
+                alt={postData.title}
+                sx={{ cursor: 'pointer', objectFit: 'fill', p: 1 }}
+              />
+            </Link>
+
             {/* Overlay Badge/Chip */}
             {isAuthor && canDelete && (
               <Badge

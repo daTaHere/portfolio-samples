@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Typography, Container, Grid } from '@mui/material';
-import { usePostsQuery } from '../hooks/post/usePostQuery';
+import { usePostsQuery } from '../hooks/post/usePostsQuery';
 import { ViewCard, PaginateSelector } from '../components/viewMain';
 
 export default function ViewMain() {

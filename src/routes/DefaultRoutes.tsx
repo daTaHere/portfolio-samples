@@ -9,5 +9,5 @@ export const publicRoutes = [
   { index: true, element: <Home /> },
   { path: 'login', element: <Login /> },
   { path: 'contact', element: <ContactUs /> },
-  { path: 'details', element: <ViewDetails /> },
+  { path: 'details/:id', element: <ViewDetails /> },
 ];
