@@ -1,3 +1,8 @@
+/*
+  The MainNavMenu maps the navLink and renders Link buttons in
+  to NavBar component.
+*/
+
 import { Link } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
 import { navLinks } from '../../config/navLinks';

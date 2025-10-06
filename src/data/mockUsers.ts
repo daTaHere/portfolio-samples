@@ -1,3 +1,5 @@
+// Mocking promise return from HTTP request
+
 import Avatar1 from '../assets/Avatar/avatar-1.jpg';
 import Avatar2 from '../assets/Avatar/avatar-2.jpg';
 import Avatar3 from '../assets/Avatar/avatar-3.jpg';

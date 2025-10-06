@@ -1,3 +1,12 @@
+/*
+  ViewPreview component, this component renders a preview of 
+  the user's post during create/editing
+
+  Future iteration, main and slide image sections will be
+  embedded with FileUploader component. Eliminating uploader 
+  component field in the form and image selector drop down. Enhancing UI/UX.
+*/
+
 import {
   Box,
   Card,

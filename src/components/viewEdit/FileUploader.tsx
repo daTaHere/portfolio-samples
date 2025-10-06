@@ -1,3 +1,10 @@
+/*
+  File upload Field component. 
+  Allows user to drag and drop image files or urls to their Post.
+
+  Future interation, this component will be intergated into the preview section.
+*/
+
 import { useCallback } from 'react';
 import { Box, Typography } from '@mui/material';
 import { useDropzone } from 'react-dropzone';

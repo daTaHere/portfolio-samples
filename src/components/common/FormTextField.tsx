@@ -1,5 +1,20 @@
+/*
+ Custom InputField component 
+ Styling required * red and background to white.
+ Setting input field size and binding field state to react-form-hook with zod for state managment
+ Example:
+    <FormTextField
+    name="message" --> binding state field
+    label="Message" --> display animated field label
+    isRequired={true} --> opt:bool defined required default false, if true conditionally render red *
+    multiline --> opt:number define field row numbers default 1
+    rows={4}
+    />
+*/
+
 import { TextField } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
+
 interface FormTextFieldProps {
   name: string;
   label: string;
@@ -37,6 +52,16 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
               multiline={multiline}
               rows={rows}
               error={!!errors[name]}
+              sx={{ bgcolor: 'white', borderRadius: 1 }}
+              slotProps={{
+                inputLabel: {
+                  sx: {
+                    '& .MuiFormLabel-asterisk': {
+                      color: 'red',
+                    },
+                  },
+                },
+              }}
             />
           )}
         />
@@ -53,19 +78,6 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
               multiline={multiline}
               rows={rows}
               color="secondary"
-              // sx={{ bgcolor: 'white', borderRadius: 1 }}
-              // slotProps={{
-              //   input: {
-              //     sx: {
-              //       color: theme.palette.text.primary,
-              //     },
-              //   },
-              //   inputLabel: {
-              //     sx: {
-              //       color: theme.palette.text.secondary,
-              //     },
-              //   },
-              // }}
             />
           )}
         />

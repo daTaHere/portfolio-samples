@@ -1,3 +1,5 @@
+// Mocking promise return from HTTP request
+
 import { mockUsers } from './mockUsers';
 
 const user = mockUsers;

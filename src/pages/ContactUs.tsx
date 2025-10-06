@@ -1,3 +1,10 @@
+/*
+  Thie ContactUs is the page layout for the contact us 
+  Form and Content components. It divids the Content on the left and 
+  From on the right for this page.
+
+  Future iteration, implement a Create/Post request on submit to mock backend. 
+*/
 import { Box, Grid } from '@mui/material';
 import { ContactForm, ContactUsContent } from '../components/contactUs';
 

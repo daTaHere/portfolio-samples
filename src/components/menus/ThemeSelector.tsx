@@ -1,3 +1,9 @@
+/*
+  The ThemeSelector component renders a gear icon with a
+  sub-menu to set the color theme. 
+  System (default system settung), Light, and Dark 
+*/
+
 import { useState } from 'react';
 import { Menu, MenuItem, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/SettingsOutlined';

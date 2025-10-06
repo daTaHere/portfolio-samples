@@ -1,3 +1,5 @@
+// Mocking promise return from HTTP request
+
 import type { AvailableUser } from '../types/user';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 

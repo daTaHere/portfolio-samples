@@ -1,3 +1,8 @@
+/*
+  Contact Us Content section:
+  - Display company info ie email, phone number, business hrs
+*/
+
 import { Box, Typography, Link } from '@mui/material';
 import Phone from '../../assets/phone icon.png';
 
@@ -21,7 +26,7 @@ export const ContactUsContent = () => {
       </Box>
 
       <Typography variant="h5" component={Link}>
-        info@monefi.com
+        info@youremail.com
       </Typography>
       <Box sx={{ my: 2 }}>
         <Typography variant="subtitle1" gutterBottom>

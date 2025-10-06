@@ -1,3 +1,11 @@
+/*
+  The AuthContext hook provides the user logged and data state.
+  Allowing us to access these state data with out multiple prop drilling.
+
+  We are mocking session state via localstorage caching. In a production
+  application we would be using session cookies/tokens to achieve this.
+*/
+
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useUserQuery } from '../hooks/users/useUserQuery';
 import type { User } from '../types/user';

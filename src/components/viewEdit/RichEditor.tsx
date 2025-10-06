@@ -1,3 +1,11 @@
+/*
+  The RichEditor component is a Input field for user Post content. 
+  It allows users to created text content for their post with 
+  editor opt ie Bold, Underline, Italic, links, list (bullet/numbered)
+
+  Future iteration, restrict content to min and max number of chars.
+*/
+
 import React, { useState } from 'react';
 import {
   Box,
@@ -9,6 +17,7 @@ import {
   MenuItem,
   IconButton,
 } from '@mui/material';
+
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';

@@ -1,3 +1,11 @@
+/*
+  The ViewMain page is the page layout for our paginate Post Card views.
+  It contains a header section, pagination selector section, and maps upto
+  8 cards for most of the body. 
+
+  Future iteration, this page will implement filter by date created,
+   section (frontend, backend, devops), and featured.
+*/
 import { useState } from 'react';
 import { Typography, Container, Grid } from '@mui/material';
 import { usePostsQuery } from '../hooks/post/usePostsQuery';

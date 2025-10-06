@@ -1,3 +1,8 @@
+/*
+  The ViewEdit page renders the Edit page layout with the form section
+  on the left and the preview section one the right.
+*/
+
 import { useEffect } from 'react';
 import { Grid, Container } from '@mui/material';
 import { useForm, FormProvider } from 'react-hook-form';

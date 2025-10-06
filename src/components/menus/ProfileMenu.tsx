@@ -1,3 +1,10 @@
+/*
+  The Profile menu renders the user avatar when logged in.
+  On click will open a drop down that renders the users info
+  (avator pic, full name, and email). It also renders the 
+  ThemeSelector icon as a submenu
+*/
+
 import { useState } from 'react';
 import {
   IconButton,

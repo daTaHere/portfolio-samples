@@ -1,3 +1,9 @@
+/* 
+  Contact Us Form component:
+  - Form state manage via React-Form-Hooks
+  - Input Validation via zod
+*/
+
 import { Button, Grid } from '@mui/material';
 import { useForm, FormProvider } from 'react-hook-form';
 import { z } from 'zod';

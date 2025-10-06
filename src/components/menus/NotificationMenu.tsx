@@ -1,3 +1,14 @@
+/*
+ This NotificationMenu component renders a notifcation bell icon
+ to notify user's that there are new messages in the inbox. 
+ On click will render a drop down which will display a green dot
+ next to unread messages. I will also provide a short portion of the 
+ messages along with the senders Avatar.
+
+ Future iteration, conditionaly render green dot only on unread messages.
+ Sort message via unread before read and date send decending
+*/
+
 import { useState } from 'react';
 import {
   Avatar,

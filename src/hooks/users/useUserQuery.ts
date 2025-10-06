@@ -1,4 +1,13 @@
-// src/hooks/useUserQuery.ts
+/**
+ Custom React Query hook for fetching a user by ID.
+ Uses caching and stale-time to optimize repeated requests.
+ Keeps data fetching logic out of components for cleaner UI code.
+
+ For prod we would want to fetch the session cookie in from browser.
+ The sesseion cookie should be index to ensure quick lookup and 
+ checked if session is valid or has expired.
+*/
+
 import { useQuery } from '@tanstack/react-query';
 import { getUserById } from '../../services/userServices';
 

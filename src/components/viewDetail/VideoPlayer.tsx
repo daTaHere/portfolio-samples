@@ -1,3 +1,7 @@
+/*
+  Video Player component via react-player.
+  Control video media playback
+*/
 import { Box } from '@mui/material';
 import ReactPlayer from 'react-player';
 

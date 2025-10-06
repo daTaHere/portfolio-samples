@@ -1,3 +1,13 @@
+/*
+  The Login menu renders in the rigth of the top NavBar.
+  Renders as hamburger menu icon during Logged out it. It mocks
+  user login by providing a drop down to select a user to login.
+  It also provides  ThemeSelector icon as a sub-menu for dark/light 
+  theme selection
+
+  Future iteration, implement actual login with session tokens.
+*/
+
 import { useState } from 'react';
 import { Menu, MenuItem, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';

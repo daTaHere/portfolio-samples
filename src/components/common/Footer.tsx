@@ -1,3 +1,8 @@
+/*
+ Footer component maps icons with herf to related media.
+ The anchors are modifed at configs/footicons.ts
+*/
+
 import { Box, Container, IconButton, Typography } from '@mui/material';
 import { footerIcons } from '../../config/footerIcons';
 

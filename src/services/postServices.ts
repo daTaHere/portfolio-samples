@@ -1,18 +1,38 @@
-// Hooks are thin wrappers around one service call that add React Query’s behavior:
-
-// useUserQuery(id) → wraps getUserById
-
-// useUsersQuery() → wraps getUsers
-
-// useCreateUserMutation() → wraps createUser
-
-// useUpdateUserMutation(id) → wraps updateUser
-
-// useDeleteUserMutation(id) → wraps deleteUser
+/*
+  Post service file, this file contains the raw 
+  CRUD HTTP request methods for Post data.
+*/
 
 import { mockPostPages } from '../data/mockPostPages';
 import { mockPost } from '../data/mockPost';
 import type { Post } from '../types/post';
+
+/*
+  Fetch a post by ID.
+  Abstracted to allow future integration with a real API endpoint.
+*/
+
+export const getPostById = async (
+  postId: number
+): Promise<{
+  data: Post;
+}> => {
+  // Simulate network delay
+  await new Promise((res) => setTimeout(res, 200));
+
+  const postData = mockPost.find((p) => p.id === postId);
+
+  if (!postData) {
+    throw new Error(`Post ${postId} not found`);
+  }
+
+  return { data: postData };
+};
+
+/**
+ * Fetch a paginated list of posts.
+ * Demonstrates how the service could handle query params for pagination.
+ */
 
 export const getPostPage = async (
   page: number
@@ -38,21 +58,4 @@ export const getPostPage = async (
     totalPages: mockPostPages.totalPages,
     ...pageData,
   };
-};
-
-export const getPostById = async (
-  postId: number
-): Promise<{
-  data: Post;
-}> => {
-  // Simulate network delay
-  await new Promise((res) => setTimeout(res, 200));
-
-  const postData = mockPost.find((p) => p.id === postId);
-
-  if (!postData) {
-    throw new Error(`Post ${postId} not found`);
-  }
-
-  return { data: postData };
 };

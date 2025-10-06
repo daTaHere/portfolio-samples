@@ -1,3 +1,10 @@
+/*
+  PoctectedRoute is a hook used to validate user's log in 
+  state and role access. The useAuthContext user state is called
+  and evalated. If the user is not logged in or is not assigned a 
+  required role. The route will not be accessible and they will 
+  be redirected to the main/home page.
+*/
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
 

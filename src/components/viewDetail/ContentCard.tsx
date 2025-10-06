@@ -1,3 +1,9 @@
+/*
+  The CardContent component renders the user's complete
+  Post Text content with Rich editing ie Bold, Underline, Italic, and 
+  bullet point list.
+*/
+
 import {
   Typography,
   Avatar,

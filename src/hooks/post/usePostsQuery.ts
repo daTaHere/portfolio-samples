@@ -1,3 +1,9 @@
+/*
+  Custom React Query hook for fetching paginated posts.
+  Demonstrates use of query keys for cache isolation per page.
+  Stale time ensures that data refreshes after a defined interval.
+*/
+
 import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import { getPostPage } from '../../services/postServices';
 import type { Post } from '../../types/post';

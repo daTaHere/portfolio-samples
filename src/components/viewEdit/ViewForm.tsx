@@ -1,3 +1,11 @@
+/*
+ViewForm component renders the component section of the edit page.
+It allows the user to create/edit a post. It provide input fields for 
+Post Title, Email, Text Content (support rich editing) and file upload
+filed for 4 images. A image section drop to select which section the user
+wants their image displayed
+*/
+
 import {
   Button,
   Typography,

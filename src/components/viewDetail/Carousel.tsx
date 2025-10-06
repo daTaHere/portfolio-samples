@@ -1,3 +1,10 @@
+/*
+  Carousel component renders a main image above thumbnail 
+  images that are use to navigate through slide images. The 
+  selected image will be displayed and expanded in the main image
+  section.
+*/
+
 import { memo } from 'react';
 import Slider from 'react-slick';
 import type { Settings } from 'react-slick';

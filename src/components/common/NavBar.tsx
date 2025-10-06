@@ -1,3 +1,15 @@
+/*
+  Default top NavBar component:
+  Renders left logo and center Link buttons 
+  
+  Conditional renders:
+  On logged out 
+  -> Hamburger icon: login and themeSelector sub-menu
+  On logged in 
+  -> Profile icon: user info and themeSelector sub-menu
+  -> Notification icon: messages sub-menu
+*/
+
 import { useState } from 'react';
 import {
   AppBar,
@@ -5,7 +17,6 @@ import {
   IconButton,
   Menu,
   Box,
-  // useMediaQuery,
   Container,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -22,8 +33,6 @@ import { useAuthContext } from '../../context/AuthContext';
 
 export const NavBar: React.FC = () => {
   const theme = useTheme();
-  // const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
-  // const isLaptop = useMediaQuery(theme.breakpoints.up('md'));
 
   const { user } = useAuthContext();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

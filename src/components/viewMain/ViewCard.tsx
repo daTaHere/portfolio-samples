@@ -1,3 +1,19 @@
+/*
+  ViewCard component with custom styling and effects.
+  This card renders a top main image, short text content section,
+  and displays the Authors avatar, full name, and date publish.
+
+  *** Role base rendering ***
+
+  Public -> Basic published Post card with image and content 
+
+  Post Owner -> Basic published Post card with Action Section 
+                for Post owned by user to edit or delete
+
+  Admin -> Basic published or not published Post Cards with Action section to
+           publish or remove post
+*/
+
 import { Link } from 'react-router-dom';
 import {
   Typography,
