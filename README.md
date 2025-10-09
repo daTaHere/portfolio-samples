@@ -6,12 +6,12 @@
 > Portfolio sample demonstrating modular front-end architecture, role-based routing, and mock API integration.
 
 [![Node.js](https://img.shields.io/badge/Node-v22+-green)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-4.4.9-orange)](https://vitejs.dev/)
-[![MUI](https://img.shields.io/badge/MUI-5.14.0-purple)](https://mui.com/)
-[![TanStack Query](https://img.shields.io/badge/TanStack%20Query-@latest-yellow)](https://tanstack.com/query/latest)
-[![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-v7.60.0-brightgreen)](https://react-hook-form.com/)
-[![Zod](https://img.shields.io/badge/Zod-v3.27.0-red)](https://zod.dev/)
+[![React](https://img.shields.io/badge/React-v19.1.1-blue)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-v7.1.2-orange)](https://vitejs.dev/)
+[![MUI](https://img.shields.io/badge/MUI-v7.3.2-purple)](https://mui.com/)
+[![TanStack Query](https://img.shields.io/badge/TanStack%20Query-v5.90.2-yellow)](https://tanstack.com/query/latest)
+[![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-v7.62.0-brightgreen)](https://react-hook-form.com/)
+[![Zod](https://img.shields.io/badge/Zod-v4.1.9-red)](https://zod.dev/)
 
 ---
 
