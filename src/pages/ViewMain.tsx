@@ -1,10 +1,9 @@
 /*
   The ViewMain page is the page layout for our paginate Post Card views.
   It contains a header section, pagination selector section, and maps upto
-  8 cards for most of the body. 
+  8 cards for most of the body.
 
-  Future iteration, this page will implement filter by date created,
-   section (frontend, backend, devops), and featured.
+  "Future iteration" note (filtering or pagination)
 */
 import { useState } from 'react';
 import { Typography, Container, Grid } from '@mui/material';
@@ -14,6 +13,9 @@ import { ViewCard, PaginateSelector } from '../components/viewMain';
 export default function ViewMain() {
   const [page, setPage] = useState(0);
   const { data: posts, isLoading, isError } = usePostsQuery(page);
+
+  // `page` is zero-indexed internally, but Pagination component is 1-indexed.
+  // We subtract 1 when updating state to sync with API data.
   const onPageClick = (_event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value - 1);
   };

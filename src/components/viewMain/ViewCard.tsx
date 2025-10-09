@@ -4,14 +4,9 @@
   and displays the Authors avatar, full name, and date publish.
 
   *** Role base rendering ***
-
-  Public -> Basic published Post card with image and content 
-
-  Post Owner -> Basic published Post card with Action Section 
-                for Post owned by user to edit or delete
-
-  Admin -> Basic published or not published Post Cards with Action section to
-           publish or remove post
+  - Public
+  - Register Users
+  - Admin
 */
 
 import { Link } from 'react-router-dom';

@@ -1,6 +1,6 @@
 /**
-  Mock API implementation for demo purposes.
-  Will be replaced with a full API client in a future iteration.
+  Mock API client for demo purposes. 
+  Future: integrate live REST/GraphQL API.
 */
 
 import { mockUsers } from '../data/mockUsers';

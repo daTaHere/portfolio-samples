@@ -1,7 +1,5 @@
 /*
-  This routes component sets our DefaultLayout as the parent layout
-  of our application. The children are return base on Auth/Authz protecting
-  our private routes while allowing our public routes accessibility.
+  Ensure all pages are childern of the default layout.
 */
 
 import DefaultLayout from '../layouts/DefaultLayout';
