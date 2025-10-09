@@ -130,6 +130,18 @@ Commercial or production reuse of this codebase is not permitted.
 
 ---
 
+## Next Steps
+
+This project is a work in progress. Potential improvements and enhancements include:
+
+- **Enhanced UI/UX:** Refine component layouts, improve responsiveness, and enhance accessibility.
+- **Additional Features:** Add project filters, search functionality, or category tags for portfolio items.
+- **Performance Optimization:** Optimize image loading and component rendering.
+- **Future Backend Integration:** Connect a backend to handle dynamic data, user interactions, or content management.
+- **Future Documentation Enhancements:** Expand README with architecture diagrams, API references, and setup guides for developers.
+
+---
+
 ## 👨‍💻 Author
 
 **Adam Huynh**  
