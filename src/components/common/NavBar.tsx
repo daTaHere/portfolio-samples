@@ -10,7 +10,7 @@
   -> Notification icon: messages sub-menu
 */
 
-import { useState } from 'react';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import {
   AppBar,
   Toolbar,
@@ -20,8 +20,9 @@ import {
   Container,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useState } from 'react';
 import Logo from '../../assets/react.svg';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { useAuthContext } from '../../context/AuthContext';
 import {
   ThemeSelector,
   LoginMenu,
@@ -29,7 +30,6 @@ import {
   NotificationMenu,
   ProfileMenu,
 } from '../menus';
-import { useAuthContext } from '../../context/AuthContext';
 
 export const NavBar: React.FC = () => {
   const theme = useTheme();

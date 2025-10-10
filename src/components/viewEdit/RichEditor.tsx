@@ -6,7 +6,10 @@
   Future iteration, restrict content to min and max number of chars.
 */
 
-import React, { useState } from 'react';
+import FormatBoldIcon from '@mui/icons-material/FormatBold';
+import FormatItalicIcon from '@mui/icons-material/FormatItalic';
+import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {
   Box,
   useTheme,
@@ -16,16 +19,11 @@ import {
   Menu,
   MenuItem,
   IconButton,
-} from '@mui/material';
-
+ GlobalStyles } from '@mui/material';
+import Placeholder from '@tiptap/extension-placeholder';
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import Placeholder from '@tiptap/extension-placeholder';
-import FormatBoldIcon from '@mui/icons-material/FormatBold';
-import FormatItalicIcon from '@mui/icons-material/FormatItalic';
-import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { GlobalStyles } from '@mui/material';
+import React, { useState } from 'react';
 
 interface RichEditorProps {
   value: string;
@@ -61,26 +59,27 @@ export const RichEditor: React.FC<RichEditorProps> = ({ value, onChange }) => {
   };
   const handleMenuClose = () => setAnchorEl(null);
 
-  if (!editor) return null;
+  if (!editor) {
+    return null;
+  }
 
   const applyList = (type: 'bullet' | 'ordered') => {
-    editor
-      .chain()
-      .focus()
-      [type === 'bullet' ? 'toggleBulletList' : 'toggleOrderedList']()
-      .run();
+    const listAction =
+      type === 'bullet' ? 'toggleBulletList' : 'toggleOrderedList';
+    editor.chain().focus()[listAction]().run();
     handleMenuClose();
   };
 
   const insertLink = () => {
     const url = prompt('Enter the URL');
-    if (url)
+    if (url) {
       editor
         .chain()
         .focus()
         .extendMarkRange('link')
         .setLink({ href: url })
         .run();
+    }
     handleMenuClose();
   };
 

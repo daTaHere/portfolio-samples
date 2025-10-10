@@ -9,7 +9,7 @@
  Sort message via unread before read and date send decending
 */
 
-import { useState } from 'react';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import {
   Avatar,
   Box,
@@ -23,9 +23,9 @@ import {
   Typography,
   Tooltip,
 } from '@mui/material';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mockNotifications } from '../../data/mockNotifications';
+import { useState } from 'react';
 import addimg from '../../assets/Avatar/addimg.png';
+import { mockNotifications } from '../../data/mockNotifications';
 
 interface DotBadgeProps {
   color?: string; // custom color (default MUI theme.secondary.main)
@@ -84,7 +84,9 @@ export const NotificationMenu = () => {
                 <Avatar
                   alt={item.sender}
                   src={item.recipient.avatarUrl || addimg}
-                  onError={(e: any) => {
+                  onError={(
+                    e: React.SyntheticEvent<HTMLImageElement, Event>
+                  ) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = addimg;
                   }}

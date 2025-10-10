@@ -11,8 +11,8 @@ import {
   Stack,
   Container,
 } from '@mui/material';
-import type { Post } from '../../types/post';
 import formatUtcHelper from '../../utils/formatUtcHelper';
+import type { Post } from '../../types/post';
 
 type ContentCardProps = {
   postData: Post;
@@ -33,7 +33,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({ postData }) => {
         <Stack direction="row" spacing={2} alignItems="center" mt={3}>
           <Avatar
             src={postData.author.avatarUrl}
-            alt={`Author Avatar`}
+            alt={'Author Avatar'}
             sx={{ width: 50, height: 50 }}
           />
           <Stack>

@@ -6,8 +6,8 @@
 
 import { Grid, Container, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { usePostQuery } from '../hooks/post/usePostQuery';
 import { Carousel, ContentCard, VideoPlayer } from '../components/viewDetail';
+import { usePostQuery } from '../hooks/post/usePostQuery';
 
 const ViewDetails = () => {
   const { id } = useParams();

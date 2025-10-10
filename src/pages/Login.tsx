@@ -7,10 +7,10 @@
   email/mobile-text validation.
 */
 
-import LoginForm from '../components/LoginForm';
 import { Box } from '@mui/material';
+import LoginForm from '../components/LoginForm';
 
-function Login() {
+const Login = () => {
   return (
     <Box
       display="flex"
@@ -21,6 +21,6 @@ function Login() {
       <LoginForm />
     </Box>
   );
-}
+};
 
 export default Login;

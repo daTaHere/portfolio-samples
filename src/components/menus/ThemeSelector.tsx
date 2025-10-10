@@ -4,13 +4,13 @@
   System (default system settung), Light, and Dark 
 */
 
-import { useState } from 'react';
-import { Menu, MenuItem, Typography } from '@mui/material';
-import SettingsIcon from '@mui/icons-material/SettingsOutlined';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 import BrightnessMediumTwoToneIcon from '@mui/icons-material/BrightnessMediumTwoTone';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import SettingsIcon from '@mui/icons-material/SettingsOutlined';
+import { Menu, MenuItem, Typography } from '@mui/material';
 import { useColorScheme } from '@mui/material/styles';
+import { useState } from 'react';
 
 type ThemeValue = 'system' | 'light' | 'dark';
 

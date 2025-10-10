@@ -3,8 +3,8 @@
   CRUD HTTP request methods for Post data.
 */
 
-import { mockPostPages } from '../data/mockPostPages';
 import { mockPost } from '../data/mockPost';
+import { mockPostPages } from '../data/mockPostPages';
 import type { Post } from '../types/post';
 
 /*

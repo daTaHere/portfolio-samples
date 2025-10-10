@@ -11,9 +11,9 @@
 
 */
 
+import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
 import type { FooterIcon } from '../types/icons';
 
 export const footerIcons: FooterIcon[] = [

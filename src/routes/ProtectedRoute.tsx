@@ -19,12 +19,12 @@ export default function ProtectedRoute({
 }: ProtectedRouteProps) {
   const { user, loading } = useAuthContext();
 
-  if (loading) return <div>Loading...</div>;
-  if (!user) return <Navigate to="/" replace />;
+  if (loading) {return <div>Loading...</div>;}
+  if (!user) {return <Navigate to="/" replace />;}
   // If allowedRoles is defined, check if user's roles intersect with allowedRoles.
   // If no match, redirect to home.
   if (allowedRoles && !user.roles.some((role) => allowedRoles.includes(role)))
-    return <Navigate to="/" replace />;
+    {return <Navigate to="/" replace />;}
 
   return <>{children}</>;
 }

@@ -5,11 +5,11 @@
   Future interation, this component will be intergated into the preview section.
 */
 
-import { useCallback } from 'react';
+import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import { Box, Typography } from '@mui/material';
+import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import { theme } from '../../theme';
 
 export const FileUploader: React.FC<{
@@ -17,7 +17,7 @@ export const FileUploader: React.FC<{
 }> = ({ onFileSelect }) => {
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
-      if (acceptedFiles.length) onFileSelect(acceptedFiles[0]);
+      if (acceptedFiles.length) {onFileSelect(acceptedFiles[0]);}
     },
     [onFileSelect]
   );

@@ -1,14 +1,14 @@
-import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import { TextField, Button, Box, Typography } from '@mui/material';
+import { useForm, Controller } from 'react-hook-form';
+import * as z from 'zod';
 
 const schema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
 });
 
-function LoginForm() {
+const LoginForm = () => {
   type FormValues = z.infer<typeof schema>;
 
   const onSubmit = (data: FormValues) => console.log(data);
@@ -65,6 +65,6 @@ function LoginForm() {
       </form>
     </Box>
   );
-}
+};
 
 export default LoginForm;

@@ -47,7 +47,7 @@ export const ViewPreview: React.FC<ViewPreviewProps> = ({
           component="img"
           height={300}
           image={(mainImage as string) ?? '/users/user-0.jpg'}
-          alt={`main-img`}
+          alt={'main-img'}
           sx={{ borderRadius: 1, objectFit: 'cover' }}
         />
         <CardContent

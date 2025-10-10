@@ -5,10 +5,10 @@
   section.
 */
 
+import { Box, CardMedia, GlobalStyles } from '@mui/material';
 import { memo } from 'react';
 import Slider from 'react-slick';
 import type { Settings } from 'react-slick';
-import { Box, CardMedia, GlobalStyles } from '@mui/material';
 
 type CarouselProps = {
   mediaData: string[];
@@ -34,8 +34,6 @@ export const Carousel: React.FC<CarouselProps> = memo(({ mediaData }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
-  console.log(mediaData);
 
   return (
     <Box>
@@ -75,3 +73,5 @@ export const Carousel: React.FC<CarouselProps> = memo(({ mediaData }) => {
     </Box>
   );
 });
+
+Carousel.displayName = 'Carousel';

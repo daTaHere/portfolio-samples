@@ -3,8 +3,8 @@
   to NavBar component.
 */
 
-import { Link } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { navLinks } from '../../config/navLinks';
 
 export const MainNavMenu = () => {

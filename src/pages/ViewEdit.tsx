@@ -3,17 +3,29 @@
   on the left and the preview section one the right.
 */
 
-import { useEffect } from 'react';
-import { Grid, Container } from '@mui/material';
-import { useForm, FormProvider } from 'react-hook-form';
-import type { SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuthContext } from '../context/AuthContext';
-import { ViewForm, ViewPreview } from '../components/viewEdit';
-import { UserSchema, type User } from '../types/user';
+import { Grid, Container } from '@mui/material';
 import DOMPurify from 'dompurify';
+import { useEffect } from 'react';
+import { useForm, FormProvider } from 'react-hook-form';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as z from 'zod';
+import { ViewForm, ViewPreview } from '../components/viewEdit';
+import { useAuthContext } from '../context/AuthContext';
+import { UserSchema, type User } from '../types/user';
+import type { SubmitHandler } from 'react-hook-form';
+
+const DEFAULT_DATA: ViewFormData = {
+  author: null as unknown as User,
+  title: '',
+  email: '',
+  content: '',
+  selectedImage: '',
+  mainImage: null,
+  slide1: null,
+  slide2: null,
+  slide3: null,
+};
 
 export interface ViewInput {
   author: User;
@@ -45,18 +57,6 @@ const View = () => {
   const navigate = useNavigate();
   const { state, pathname } = useLocation();
   const { user } = useAuthContext();
-
-  const DEFAULT_DATA: ViewFormData = {
-    author: user as User,
-    title: '',
-    email: '',
-    content: '',
-    selectedImage: '',
-    mainImage: null,
-    slide1: null,
-    slide2: null,
-    slide3: null,
-  };
 
   const methods = useForm<ViewFormData>({
     resolver: zodResolver(viewFormSchema),
@@ -101,7 +101,9 @@ const View = () => {
 
   const handleFileSelect = (file: File) => {
     const selectedImage = watched.selectedImage;
-    if (!selectedImage) return;
+    if (!selectedImage) {
+      return;
+    }
     const previewUrl = URL.createObjectURL(file);
     setValue(selectedImage, previewUrl);
   };

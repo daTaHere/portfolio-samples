@@ -12,7 +12,7 @@ export const mockNotifications = [
     sender: 'Kristin Watson',
     date: '2 hours ago',
     time: '2:19 PM',
-    message: `Krisitn Watsan like your comment on course Javascript Introduction!`,
+    message: 'Krisitn Watsan like your comment on course Javascript Introduction!',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const mockNotifications = [
     sender: 'Brooklyn Simmons',
     date: 'Oct 9,',
     time: '1:20 PM',
-    message: `Just launched a new Courses React for Beginner.`,
+    message: 'Just launched a new Courses React for Beginner.',
   },
   {
     id: 3,
@@ -30,6 +30,6 @@ export const mockNotifications = [
     sender: 'Jenny Wilson',
     date: 'Oct 9,',
     time: '1:56 PM',
-    message: `Krisitn Watsan like your comment on course Javascript Introduction!`,
+    message: 'Krisitn Watsan like your comment on course Javascript Introduction!',
   },
 ];

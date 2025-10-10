@@ -5,10 +5,10 @@
 
   "Future iteration" note (filtering or pagination)
 */
-import { useState } from 'react';
 import { Typography, Container, Grid } from '@mui/material';
-import { usePostsQuery } from '../hooks/post/usePostsQuery';
+import { useState } from 'react';
 import { ViewCard, PaginateSelector } from '../components/viewMain';
+import { usePostsQuery } from '../hooks/post/usePostsQuery';
 
 export default function ViewMain() {
   const [page, setPage] = useState(0);

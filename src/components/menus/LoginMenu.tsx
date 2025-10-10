@@ -8,12 +8,12 @@
   Future iteration, implement actual login with session tokens.
 */
 
-import { useState } from 'react';
+import LoginIcon from '@mui/icons-material/Login';
 import { Menu, MenuItem, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useState } from 'react';
 import { useAuthContext } from '../../context/AuthContext';
 import { mockAvailableUsers } from '../../data/mockAvailableUsers';
-import LoginIcon from '@mui/icons-material/Login';
 
 export const LoginMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

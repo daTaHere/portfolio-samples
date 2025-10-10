@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles';
+import { components } from './components';
 import { lightPalette, darkPalette } from './palette';
 import { typography } from './typography';
-import { components } from './components';
 
 declare module '@mui/material/styles' {
   interface Theme {

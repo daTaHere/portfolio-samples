@@ -4,9 +4,9 @@
   the page.
 */
 
+import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { Footer, NavBar } from '../components/common';
-import { Box } from '@mui/material';
 
 export default function DefaultLayout() {
   return (

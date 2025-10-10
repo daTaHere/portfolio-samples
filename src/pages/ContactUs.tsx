@@ -8,7 +8,7 @@
 import { Box, Grid } from '@mui/material';
 import { ContactForm, ContactUsContent } from '../components/contactUs';
 
-function ContactUs() {
+const ContactUs = () => {
   return (
     <Box sx={{ display: 'flex', flexGrow: 1 }}>
       <Grid container spacing={4}>
@@ -34,5 +34,5 @@ function ContactUs() {
       </Grid>
     </Box>
   );
-}
+};
 export default ContactUs;

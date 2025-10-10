@@ -5,7 +5,7 @@
   ThemeSelector icon as a submenu
 */
 
-import { useState } from 'react';
+import LogoutIcon from '@mui/icons-material/Logout';
 import {
   IconButton,
   Menu,
@@ -15,11 +15,11 @@ import {
   Divider,
   Box,
 } from '@mui/material';
+import { useState } from 'react';
 
+import { ThemeSelector } from './ThemeSelector';
 import addimg from '../../assets/Avatar/addimg.png';
 import { useAuthContext } from '../../context/AuthContext';
-import LogoutIcon from '@mui/icons-material/Logout';
-import { ThemeSelector } from './ThemeSelector';
 
 interface ProfileMenuProps {
   onClose: () => void;

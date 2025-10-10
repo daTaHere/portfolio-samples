@@ -12,6 +12,7 @@
 [![TanStack Query](https://img.shields.io/badge/TanStack%20Query-v5.90.2-yellow)](https://tanstack.com/query/latest)
 [![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-v7.62.0-brightgreen)](https://react-hook-form.com/)
 [![Zod](https://img.shields.io/badge/Zod-v4.1.9-red)](https://zod.dev/)
+[![CI](https://github.com/daTaHere/portfolio-samples/actions/workflows/ci.yml/badge.svg)](https://github.com/daTaHere/portfolio-samples/actions/workflows/ci.yml)
 
 ---
 
@@ -109,6 +110,29 @@ Select CMD:
 ```bash
 $ docker compose up -d
 ```
+
+---
+
+## 🧹 Linting & Code Quality
+
+We use **ESLint** for consistent code style and quality checks across the project.
+
+### Running ESLint Locally
+
+To check your code for linting issues and auto-fix where possible:
+
+```bash
+npm run lint -- --fix
+```
+
+> ⚠️ Lint warnings do not fail the CI/CD workflow
+> ✅ Lint errors will block merges in pull requests or main branch builds.
+
+> **Note:**
+
+- All .js, .jsx, .ts, and .tsx files are checked.
+- TypeScript function return types are warned, not enforced as errors.
+- Arrow-function and named-component conventions are recommended but do **not block CI**.
 
 ---
 

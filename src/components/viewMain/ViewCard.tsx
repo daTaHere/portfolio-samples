@@ -9,7 +9,9 @@
   - Admin
 */
 
-import { Link } from 'react-router-dom';
+import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import {
   Typography,
   Badge,
@@ -23,13 +25,10 @@ import {
   Stack,
   Grid,
 } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
-import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone';
-import type { Post } from '../../types/post';
+import { styled , useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
-import { useTheme } from '@mui/material/styles';
+import type { Post } from '../../types/post';
 
 type ViewCardProps = {
   postData: Post;
