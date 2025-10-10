@@ -10,7 +10,7 @@ type FetchOptions = RequestInit & { auth?: boolean };
 export async function apiFetch<T>(
   endpoint: string,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  options: FetchOptions = {}
+  _options: FetchOptions = {}
 ): Promise<T> {
   // Check for user endpoint and return mock user
   if (endpoint.startsWith('/users/')) {
