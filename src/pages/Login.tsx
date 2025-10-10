@@ -1,75 +1,26 @@
-import { useForm, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { TextField, Button, Box, Typography } from '@mui/material';
+/*
+  Template Login page two fields and submit button. 
 
-const schema = z.object({
-  email: z.string().email(),
-  password: z.string().min(6),
-});
+  Future iteration, this will be a working demo login/reg feature. 
+  It will include a small backend and a service file to create a 
+  new user. Implementing password hashing, unique email (check aginist back db), 
+  email/mobile-text validation.
+*/
 
-type FormValues = z.infer<typeof schema>;
+import { Box } from '@mui/material';
+import LoginForm from '../components/LoginForm';
 
-export default function LoginForm() {
-  const { control, handleSubmit } = useForm<FormValues>({
-    resolver: zodResolver(schema),
-  });
-
-  const onSubmit = (data: FormValues) => console.log(data);
-
+const Login = () => {
   return (
     <Box
       display="flex"
+      flexGrow={1}
       justifyContent="center"
       alignItems="center"
-      minHeight="80vh"
     >
-      <Box
-        width="100%"
-        maxWidth={400}
-        p={4}
-        boxShadow={3}
-        borderRadius={2}
-        bgcolor="background.paper"
-      >
-        <Typography variant="h5" mb={2} align="center">
-          Login
-        </Typography>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Controller
-            name="email"
-            control={control}
-            render={({ field, fieldState }) => (
-              <TextField
-                {...field}
-                label="Email"
-                error={!!fieldState.error}
-                helperText={fieldState.error?.message}
-                fullWidth
-                margin="normal"
-              />
-            )}
-          />
-          <Controller
-            name="password"
-            control={control}
-            render={({ field, fieldState }) => (
-              <TextField
-                {...field}
-                type="password"
-                label="Password"
-                error={!!fieldState.error}
-                helperText={fieldState.error?.message}
-                fullWidth
-                margin="normal"
-              />
-            )}
-          />
-          <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
-            Login
-          </Button>
-        </form>
-      </Box>
+      <LoginForm />
     </Box>
   );
-}
+};
+
+export default Login;

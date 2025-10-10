@@ -1,15 +1,25 @@
+/*
+  The DefaulLayout ensure that the page being route to will
+  always provide the navBar on top and footer at bottom of 
+  the page.
+*/
+
+import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import { Container, Box } from '@mui/material';
+import { Footer, NavBar } from '../components/common';
 
 export default function DefaultLayout() {
   return (
-    <Box display="flex" flexDirection="column" minHeight="100vh">
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        alignItems: 'center',
+      }}
+    >
       <NavBar />
-      <Container maxWidth="xl" sx={{ flex: 1, py: 2 }}>
-        <Outlet /> {/* 👈 React Router injects the child route here */}
-      </Container>
+      <Outlet />
       <Footer />
     </Box>
   );

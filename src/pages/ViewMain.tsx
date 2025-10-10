@@ -1,0 +1,49 @@
+/*
+  The ViewMain page is the page layout for our paginate Post Card views.
+  It contains a header section, pagination selector section, and maps upto
+  8 cards for most of the body.
+
+  "Future iteration" note (filtering or pagination)
+*/
+import { Typography, Container, Grid } from '@mui/material';
+import { useState } from 'react';
+import { ViewCard, PaginateSelector } from '../components/viewMain';
+import { usePostsQuery } from '../hooks/post/usePostsQuery';
+
+export default function ViewMain() {
+  const [page, setPage] = useState(0);
+  const { data: posts, isLoading, isError } = usePostsQuery(page);
+
+  // `page` is zero-indexed internally, but Pagination component is 1-indexed.
+  // We subtract 1 when updating state to sync with API data.
+  const onPageClick = (_event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value - 1);
+  };
+
+  return (
+    <Container sx={{ my: 8 }}>
+      <Typography variant="h4" sx={{ textAlign: 'center' }}>
+        Dashboard
+      </Typography>
+
+      {isLoading ? (
+        <Typography>Loading...</Typography>
+      ) : isError ? (
+        <Typography>Error loading posts</Typography>
+      ) : (
+        <>
+          <PaginateSelector
+            totalPages={posts!.totalPages}
+            selectedPage={page}
+            handleChange={onPageClick}
+          />
+          <Grid spacing={2} container>
+            {posts!.data.map((post) => (
+              <ViewCard key={post.id} postData={post} />
+            ))}
+          </Grid>
+        </>
+      )}
+    </Container>
+  );
+}

@@ -1,5 +1,5 @@
+//Combines public and auth routes into app-wide router instance.
 import { createBrowserRouter } from 'react-router-dom';
-import { publicRoutes } from './public';
-import { privateRoutes } from './private';
+import { routes } from '../config/routes';
 
-export const router = createBrowserRouter([privateRoutes, publicRoutes]);
+export const router = createBrowserRouter(routes);
