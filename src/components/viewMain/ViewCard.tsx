@@ -25,7 +25,7 @@ import {
   Stack,
   Grid,
 } from '@mui/material';
-import { styled , useTheme } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
 import type { Post } from '../../types/post';
@@ -79,15 +79,13 @@ export const ViewCard: React.FC<ViewCardProps> = ({ postData }) => {
               justifyContent: 'center',
             }}
           >
-            <Link to={`/details/${postData.id}`}>
-              <CardMedia
-                component="img"
-                height={200}
-                image={postData.media.mainImg}
-                alt={postData.title}
-                sx={{ cursor: 'pointer', objectFit: 'fill', p: 1 }}
-              />
-            </Link>
+            <CardMedia
+              component="img"
+              height={200}
+              image={postData.media.mainImg}
+              alt={postData.title}
+              sx={{ cursor: 'pointer', objectFit: 'fill', p: 1 }}
+            />
 
             {/* Overlay Badge/Chip */}
             {isAuthor && canDelete && (
