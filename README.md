@@ -172,7 +172,7 @@ This project is a work in progress. Potential improvements and enhancements incl
 **Adam Huynh**  
 [🌐 adamhuynh.dev](https://adamhuynh.dev)  
 Full Stack Engineer  
-React • TypeScript • DevOps • Cloud Architecture
+React • TypeScript • Python • C# • Flask/Django • ASP.NET Core • SQL • DevOps • Cloud Architecture
 
 ---
 
