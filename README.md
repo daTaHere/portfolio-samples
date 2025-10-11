@@ -181,5 +181,5 @@ React • TypeScript • Python • C# • Flask/Django • ASP.NET Core • SQL
 I’m always open to discussing new opportunities, collaboration, or technical deep dives.
 
 - 🌐 **Portfolio:** [adamhuynh.dev](https://adamhuynh.dev)
-- 💼 **LinkedIn:** [linkedin.com/in/adamhuynhdev](https://www.linkedin.com/in/adam-huynh-1a241a211)
+- 💼 **LinkedIn:** [linkedin.com/in/adam-huynh](https://www.linkedin.com/in/adam-huynh-1a241a211)
 - 📧 **Email:** adam@adamhuynh.dev
