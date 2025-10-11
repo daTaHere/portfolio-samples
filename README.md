@@ -33,6 +33,7 @@ This project serves as a **Portfolio code sample** built to highlight:
 
 ## 🧱 Project Structure
 
+```
 src/
 ┣ components/ # Shared and page-specific UI components
 ┣ context/ # Auth provider and hooks
@@ -43,7 +44,7 @@ src/
 ┣ types/ # Shared TypeScript definitions
 ┣ api.ts # Mock API client abstraction
 ┗ main.tsx # App entrypoint
-
+```
 ---
 
 ## ⚙️ Tech Stack
