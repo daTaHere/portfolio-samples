@@ -142,7 +142,7 @@ npm run lint -- --fix
 No environment variables or API keys are required for this demo.  
 All mock data is sourced locally from `/src/data`.
 
-> This ensures the project runs seamlessly out-of-the-box for recruiter review without additional setup.
+> This ensures the project runs seamlessly out-of-the-box for review without additional setup.
 
 ---
 
